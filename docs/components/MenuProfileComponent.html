@@ -1,0 +1,1376 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>wr-shell documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">wr-shell documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  MenuProfileComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/shared/menu-profile/menu-profile.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-menu-profile</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./menu-profile.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./menu-profile.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#iconMenuUser" >iconMenuUser</a>
+                            </li>
+                            <li>
+                                <a href="#listMenu" >listMenu</a>
+                            </li>
+                            <li>
+                                <a href="#menu" >menu</a>
+                            </li>
+                            <li>
+                                <a href="#selectedOption" >selectedOption</a>
+                            </li>
+                            <li>
+                                <a href="#user" >user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getIconForPath" >getIconForPath</a>
+                            </li>
+                            <li>
+                                <a href="#getMenu" >getMenu</a>
+                            </li>
+                            <li>
+                                <a href="#goTo" >goTo</a>
+                            </li>
+                            <li>
+                                <a href="#logout" >logout</a>
+                            </li>
+                            <li>
+                                <a href="#misPuntos" >misPuntos</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#sendGtmData" >sendGtmData</a>
+                            </li>
+                            <li>
+                                <a href="#sendGtmLogoutData" >sendGtmLogoutData</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#contentClass" >contentClass</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#chooseOption" >chooseOption</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router, configUtil: <a href="../injectables/ConfigUtil.html" target="_self">ConfigUtil</a>, dialogService: <a href="../injectables/DialogService.html" target="_self">DialogService</a>, gtmEventRepository: <a href="../classes/GtmDispatchEventsRepository.html" target="_self">GtmDispatchEventsRepository</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/modules/shared/menu-profile/menu-profile.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>configUtil</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ConfigUtil.html" target="_self" >ConfigUtil</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialogService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DialogService.html" target="_self" >DialogService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>gtmEventRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/GtmDispatchEventsRepository.html" target="_self" >GtmDispatchEventsRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="contentClass"></a>
+                        <b>contentClass</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/modules/shared/menu-profile/menu-profile.component.ts:22</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="chooseOption"></a>
+                        <b>chooseOption</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/modules/shared/menu-profile/menu-profile.component.ts:25</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getIconForPath"></a>
+                    <span class="name">
+                        <span ><b>getIconForPath</b></span>
+                        <a href="#getIconForPath"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getIconForPath(path: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="69"
+                                    class="link-to-prism">src/app/modules/shared/menu-profile/menu-profile.component.ts:69</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Get the selected option from the menu</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>path</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMenu"></a>
+                    <span class="name">
+                        <span ><b>getMenu</b></span>
+                        <a href="#getMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getMenu()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="58"
+                                    class="link-to-prism">src/app/modules/shared/menu-profile/menu-profile.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene el menú del perfil.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El menú del perfil.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goTo"></a>
+                    <span class="name">
+                        <span ><b>goTo</b></span>
+                        <a href="#goTo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goTo(item: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="127"
+                                    class="link-to-prism">src/app/modules/shared/menu-profile/menu-profile.component.ts:127</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Navega a la opción seleccionada del menú.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>item</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El objeto que representa la opción seleccionada del menú.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>void</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logout"></a>
+                    <span class="name">
+                        <span ><b>logout</b></span>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logout()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="93"
+                                    class="link-to-prism">src/app/modules/shared/menu-profile/menu-profile.component.ts:93</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Cierra la sesión del usuario.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="misPuntos"></a>
+                    <span class="name">
+                        <span ><b>misPuntos</b></span>
+                        <a href="#misPuntos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>misPuntos()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="86"
+                                    class="link-to-prism">src/app/modules/shared/menu-profile/menu-profile.component.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="49"
+                                    class="link-to-prism">src/app/modules/shared/menu-profile/menu-profile.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendGtmData"></a>
+                    <span class="name">
+                        <span ><b>sendGtmData</b></span>
+                        <a href="#sendGtmData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sendGtmData(descripcion: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="143"
+                                    class="link-to-prism">src/app/modules/shared/menu-profile/menu-profile.component.ts:143</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía datos a GTM.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>descripcion</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>La descripción del contenido seleccionado.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendGtmLogoutData"></a>
+                    <span class="name">
+                        <span ><b>sendGtmLogoutData</b></span>
+                        <a href="#sendGtmLogoutData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sendGtmLogoutData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="172"
+                                    class="link-to-prism">src/app/modules/shared/menu-profile/menu-profile.component.ts:172</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía datos de cierre de sesión a GTM.</p>
+<p>Este método envía los datos necesarios para realizar un seguimiento de la acción de cierre de sesión en GTM (Google Tag Manager).</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-html">// Ejemplo de uso:
+sendGtmLogoutData();</code></pre></div></div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="iconMenuUser"></a>
+                    <span class="name">
+                        <span ><b>iconMenuUser</b></span>
+                        <a href="#iconMenuUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/modules/shared/menu-profile/menu-profile.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listMenu"></a>
+                    <span class="name">
+                        <span ><b>listMenu</b></span>
+                        <a href="#listMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/FastMenuItemModel.html" target="_self" >FastMenuItemModel[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/modules/shared/menu-profile/menu-profile.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menu"></a>
+                    <span class="name">
+                        <span ><b>menu</b></span>
+                        <a href="#menu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/GetQuickMenuModel.html" target="_self" >GetQuickMenuModel</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>getSession&lt;GetQuickMenuModel&gt;(&#x27;menuProfile&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/modules/shared/menu-profile/menu-profile.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedOption"></a>
+                    <span class="name">
+                        <span ><b>selectedOption</b></span>
+                        <a href="#selectedOption"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/modules/shared/menu-profile/menu-profile.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user"></a>
+                    <span class="name">
+                        <span ><b>user</b></span>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/LoginValeproResponseModel.html" target="_self" >LoginValeproResponseModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/modules/shared/menu-profile/menu-profile.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, Input, OnInit, Output } from &quot;@angular/core&quot;;
+import { Router } from &quot;@angular/router&quot;;
+import { GTMSelectContent } from &quot;src/app/core/models/gtm-models/gtmSelectContent.model&quot;;
+import { DialogParams } from &quot;src/app/core/models/insite/dialogParams.model&quot;;
+import { FastMenuItemModel } from &quot;src/app/core/models/response/fastMenuItem.model&quot;;
+import { FastMenuListResponseModel, GetQuickMenuModel } from &quot;src/app/core/models/response/fastMenuListResponse.model&quot;;
+import { GtmDispatchEventsRepository } from &quot;src/app/core/repositories/gtmDispatchEvent.repository&quot;;
+import { ConfigUtil } from &quot;src/app/core/utils/ConfigUtil&quot;;
+import { DialogService } from &quot;src/app/core/utils/dialog.service&quot;;
+import { getSession, saveSession } from &quot;src/app/core/utils/encryptData&quot;;
+import { LoginValeproResponseModel } from &quot;src/app/infrastructure/dto/response/loginValeproResponse.model&quot;;
+
+@Component({
+  selector: &quot;app-menu-profile&quot;,
+  templateUrl: &quot;./menu-profile.component.html&quot;,
+  styleUrls: [&quot;./menu-profile.component.scss&quot;],
+})
+/**
+ * Componente que representa el menú de perfil.
+ */
+export class MenuProfileComponent implements OnInit {
+  @Input() contentClass!: string;
+
+  selectedOption: any;
+  @Output() chooseOption &#x3D; new EventEmitter();
+  user: LoginValeproResponseModel;
+  menu: GetQuickMenuModel &#x3D; getSession&lt;GetQuickMenuModel&gt;(&#x27;menuProfile&#x27;);
+  listMenu: FastMenuItemModel[] &#x3D; [];
+  iconMenuUser: string;
+
+  constructor(
+    private router: Router,
+    private configUtil: ConfigUtil,
+    private dialogService: DialogService,
+    private gtmEventRepository: GtmDispatchEventsRepository
+
+  ) {
+    if (sessionStorage.getItem(&quot;menuSelectedOption&quot;) !&#x3D; null) {
+      this.selectedOption &#x3D;
+        getSession(&#x27;menuSelectedOption&#x27;);
+    }
+    setTimeout(() &#x3D;&gt; {
+      this.getMenu();
+    }, 400);
+
+    this.user &#x3D; getSession&lt;LoginValeproResponseModel&gt;(&#x27;accountValepro&#x27;);
+  }
+
+  ngOnInit(): void {
+    this.getMenu();
+  }
+
+  /**
+   * Obtiene el menú del perfil.
+   *
+   * @returns El menú del perfil.
+   */
+  getMenu() {
+    this.menu &#x3D; getSession&lt;GetQuickMenuModel&gt;(&#x27;menuProfile&#x27;);
+    this.listMenu &#x3D; this.menu.MenuItems.filter(x &#x3D;&gt; x.Active);
+
+  }
+
+  /**
+   * Get the selected option from the menu
+   * @param path
+   * @returns
+   */
+  getIconForPath(path: string): string {
+    switch (path) {
+      case &quot;/main/account/detail-account&quot;:
+        return &#x27;person&#x27;;
+      case &quot;/main/dashboard/monitoring-report&quot;:
+        return &#x27;insert_drive_file&#x27;;
+      case &quot;/main/account/my-orders&quot;:
+        return &#x27;local_shipping&#x27;;
+      case &quot;/main/account/points&quot;:
+        return &#x27;flag&#x27;;
+      case &quot;/main/account/change-password&quot;:
+        return &#x27;lock&#x27;;
+      default:
+        return &#x27;star&#x27;;
+    }
+  }
+
+  misPuntos() {
+    this.router.navigate([&quot;/main/account/points&quot;]);
+  }
+
+  /**
+   * Cierra la sesión del usuario.
+   */
+  logout() {
+    let dialogParams: DialogParams &#x3D; {
+      success: false,
+      confirmText: &quot;Sí&quot;,
+      msg: undefined,
+      page: undefined
+    };
+    this.dialogService
+      .openConfirmDialog(&quot;¿Estás seguro que quieres cerrar sesión?&quot;, dialogParams)
+      .afterClosed()
+      .subscribe((confirmado: boolean) &#x3D;&gt; {
+        if (confirmado) {
+          this.configUtil.globalLogout().subscribe({
+            next: (response: any) &#x3D;&gt; {
+              this.sendGtmLogoutData();
+              this.configUtil.logout();
+              this.router.navigate([&#x27;/login&#x27;]);
+            }, error: (error: any) &#x3D;&gt; {
+              this.sendGtmLogoutData();
+              this.configUtil.logout();
+              this.router.navigate([&#x27;/login&#x27;]);
+            }
+          });
+        }
+      });
+
+  }
+
+  /**
+   * Navega a la opción seleccionada del menú.
+   *
+   * @param item - El objeto que representa la opción seleccionada del menú.
+   * @returns void
+   */
+  goTo(item: any) {
+    console.log(item)
+    this.chooseOption.emit()
+    this.sendGtmData(item);
+    if (item.NombreObjeto &#x3D;&#x3D; &quot;logout-system&quot;) {
+      this.logout();
+      return;
+    }
+    saveSession(JSON.stringify(item.Nombre), &#x27;menuSelectedOption&#x27;);
+  }
+
+  /**
+   * Envía datos a GTM.
+   *
+   * @param descripcion - La descripción del contenido seleccionado.
+   */
+  sendGtmData(descripcion: any) {
+    let tagData: GTMSelectContent &#x3D; {
+      event: &quot;Select_content&quot;,
+      ParameterTarget: &quot;Home&quot;,
+      ParameterType: &#x27;button&#x27;,
+      ParameterCategory: &quot;Menu Perfil de Usuario&quot;,
+      IDAccount: this.user.AccountId,
+      IDProgram: this.user.ProgramId,
+      IDPerson: this.user.PersonId,
+      UserName: this.user.UserName,
+      ParameterText: descripcion.Name,
+      ParameterItemID: &#x27;&#x27;,
+    };
+    this.gtmEventRepository.sendEvent(tagData);
+  }
+
+  /**
+   * Envía datos de cierre de sesión a GTM.
+   *
+   * @remarks
+   * Este método envía los datos necesarios para realizar un seguimiento de la acción de cierre de sesión en GTM (Google Tag Manager).
+   *
+   * @param {GTMSelectContent} tagData - Los datos del evento de cierre de sesión.
+   * @returns {void}
+   *
+   * @example
+   * // Ejemplo de uso:
+   * sendGtmLogoutData();
+   */
+  sendGtmLogoutData() {
+    let tagData: GTMSelectContent &#x3D; {
+      event: &quot;select_content&quot;,
+      ParameterTarget: &quot;Perfil&quot;,
+      ParameterType: &quot;botón&quot;,
+      ParameterCategory: &quot;Cerrar sesión&quot;,
+      UserName: this.user.UserName,
+      IDAccount: this.user.AccountId,
+      IDProgram: this.user.ProgramId,
+      IDPerson: this.user.PersonId,
+      ParameterText: &quot;Cerrar sesión - confirmación&quot;,
+      ParameterItemID: &quot;0&quot;
+    };
+    this.gtmEventRepository.sendEvent(tagData);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;containerMenuUser&quot; *ngIf&#x3D;&quot;listMenu.length &gt; 0&quot;&gt;
+  &lt;div class&#x3D;&quot;containerMenuUser__menu&quot;&gt;
+    &lt;div class&#x3D;&quot;containerMenuUser__menuList&quot;&gt;
+      &lt;div class&#x3D;&quot;containerMenuUser__list&quot; *ngFor&#x3D;&quot;let item of listMenu&quot;&gt;
+        &lt;mat-icon&gt;{{ getIconForPath(item.Path) }}&lt;/mat-icon&gt;
+        &lt;span class&#x3D;&quot;regular-16 primary&quot; [routerLink]&#x3D;&quot;[item.Path]&quot; routerLinkActive&#x3D;&quot;active&quot; (click)&#x3D;&quot;goTo(item)&quot;&gt;
+          {{item.Name}}
+        &lt;/span&gt;
+        &lt;br&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;containerMenuUser__list &quot; (click)&#x3D;&quot;logout()&quot;&gt; &lt;mat-icon&gt;logout&lt;/mat-icon&gt; &lt;span
+          class&#x3D;&quot;regular-16 primary&quot;&gt;Cerrar sesión &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./menu-profile.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.containerMenuUser {
+  background-color: var(--ngx-valepro-color-tertiary);
+  padding: 1rem 1rem .5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: var(--ngx-valepro-color-secondary);
+
+  &amp;__menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &amp;__menuList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &amp;__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0rem 0rem .5rem 0rem;
+    margin-bottom: .5rem;
+    align-items: center;
+    border-bottom: 1px solid var(--ngx-valepro-color-secondary);
+    width: 100%;
+
+    mat-icon {
+      padding-right: .5rem;
+    }
+  }
+
+  &amp;__list:last-child {
+    border: none;
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="containerMenuUser" *ngIf="listMenu.length > 0">  <div class="containerMenuUser__menu">    <div class="containerMenuUser__menuList">      <div class="containerMenuUser__list" *ngFor="let item of listMenu">        <mat-icon>{{ getIconForPath(item.Path) }}</mat-icon>        <span class="regular-16 primary" [routerLink]="[item.Path]" routerLinkActive="active" (click)="goTo(item)">          {{item.Name}}        </span>        <br>      </div>      <div class="containerMenuUser__list " (click)="logout()"> <mat-icon>logout</mat-icon> <span          class="regular-16 primary">Cerrar sesión </span>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BannerComponent', 'selector': 'app-banner'},{'name': 'FeatureArticlesComponent', 'selector': 'app-feature-articles'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MatCloseSessionDialogComponent', 'selector': 'app-mat-close-session-dialog'},{'name': 'MatConfirmAwardComponent', 'selector': 'app-mat-confirm-award'},{'name': 'MatConfirmDialogComponent', 'selector': 'app-mat-confirm-dialog'},{'name': 'MatFormNequiDaviplataComponent', 'selector': 'app-mat-form-nequi-daviplata'},{'name': 'MatFormProductComponent', 'selector': 'app-mat-form-product'},{'name': 'MenuProfileComponent', 'selector': 'app-menu-profile'},{'name': 'MixpayResponseComponent', 'selector': 'app-mixpay-response'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'PolicyAcceptanceDialogComponent', 'selector': 'app-policy-acceptance-dialog'},{'name': 'PopupInformationComponent', 'selector': 'app-popup-information'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'WidgetsComponent', 'selector': 'app-widgets'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'MenuProfileComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'MenuProfileComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

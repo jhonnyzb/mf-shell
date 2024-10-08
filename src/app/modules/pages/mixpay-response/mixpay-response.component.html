@@ -1,0 +1,16 @@
+<div class="transactionContent">
+    <div class="transactionContent__card">
+        <div class="transactionContent__card-header">
+            <img [src]="iconTransaction" alt="Transaction Icon">
+            <h2 class="bold-20 primary">{{transactionStatus}}</h2>
+        </div>
+        <table class="transactionContent__table" aria-label="Detalles de la transacción">
+            <th id="head_table"></th>
+            <tr *ngFor="let detail of transactionDetails; let i = index"
+                [ngClass]="{'even-row': i % 2 === 0, 'odd-row': i % 2 !== 0}">
+                <td class="item regular-16">{{ detail.item }}</td>
+                <td class="detail regular-16">{{ detail.detail }}</td>
+            </tr>
+        </table>
+    </div>
+</div>

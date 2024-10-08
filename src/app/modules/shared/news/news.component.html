@@ -1,0 +1,25 @@
+<div *ngIf="sections.length > 0">
+  <div class="buttonBarHeader barTitle">
+    <span class="bold-16 primario  titulo">Noticias</span>
+    <div class="texto-flecha bold-16 primario  boton-ver-todo">
+    </div>
+  </div>
+
+  <div class="news__main">
+    <div *ngIf="sections.length > 0" class="news__transparent"></div>
+    <ngx-slick-carousel [config]="config" class="swiper" (afterChange)="onAfterChange()" (beforeChange)="onBeforeChange($event)">
+      <div class="news__wrapperItem" [style.width.px]="itemWidth" ngxSlickItem *ngFor="let item of sections">
+        <div class="news__itemSlick" (click)="showNews(item)">
+          <div class="news__containImgSlick" >
+            <img class="news__img" [src]=item.image alt="premio">
+          </div>
+        </div>
+      </div>
+    </ngx-slick-carousel>
+  </div>
+
+  <div class="bar-btn">
+    <div class="button btn-allShow" (click)="redirectNewList()"><span class="bold-16 primary">Ver todas las
+        noticias</span></div>
+  </div>
+</div>

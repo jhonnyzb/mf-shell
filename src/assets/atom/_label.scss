@@ -1,0 +1,42 @@
+/* Estilos base de la etiqueta */
+.label {
+  display: inline-block;
+  font-weight: bold;
+}
+
+/* Modificador para una etiqueta de color primario (por ejemplo, azul) */
+.label--primary {
+  color: var(--ngx-valepro-color-secondary);
+}
+
+/* Modificador para una etiqueta de color secundario (por ejemplo, gris) */
+.label--secondary {
+  color: var(--ngx-valepro-color-default);
+}
+
+/* Modificador para una etiqueta de tamaño grande */
+.label--large {
+  font-size: 1.2em;
+}
+
+/* Modificador para una etiqueta de tamaño pequeño */
+.label--small {
+  font-size: 0.8em;
+}
+
+/* Modificador para una etiqueta con estilo de etiqueta flotante */
+.label--floating {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: white;
+  padding: 0 4px;
+  font-size: 0.8em;
+  transition: transform 0.3s, font-size 0.3s, padding 0.3s;
+}
+
+/* Estilos de hover */
+.label:hover {
+  text-decoration: underline;
+}

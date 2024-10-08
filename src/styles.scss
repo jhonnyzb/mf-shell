@@ -1,0 +1,17 @@
+@import "./assets/preload/variables",
+"./assets/atom/button",
+"./assets/atom/inputs",
+"./assets/atom/label";
+
+:host {
+  box-sizing: border-box;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  transition: background 0.2s, border 0.2s;
+}
+
+body {
+  margin: 0px;
+}

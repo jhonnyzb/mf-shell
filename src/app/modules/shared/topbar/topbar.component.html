@@ -1,0 +1,255 @@
+<header class="containerTopbar">
+
+  <!-- header desk -->
+  <div class="containerTopbar__header">
+
+    <!-- LOGO -->
+
+    <div class="containerTopbar__logo" (click)="goMain()"></div>
+
+
+    <!-- App Search-->
+    <form class="containerTopbar__formsearch">
+
+      <div class="containerTopbar__category" #dropdown1>
+        <div class="containerTopbar__category-button" mat-button (click)="toggleMenuCategories()">
+          <span class="bold-16 primario">Categorías <mat-icon>{{ menuOpen ? 'keyboard_arrow_up' :
+              'keyboard_arrow_down'
+              }}</mat-icon></span>
+        </div>
+
+        <div *ngIf="menuOpen" class="containerTopbar__category-list" (click)="menuOpen = false">
+          <div class="containerTopbar__category-arrow"></div>
+          <div class="containerTopbar__contain-categorias">
+            <ng-container *ngFor="let item of categories; let last = last">
+              <div class="containerTopbar__category-item" [class.last]="last" (click)="selectCategory(item)">
+                <span class="regular-16"><mat-icon>{{ item.IconName ? item.IconName : 'star' }}</mat-icon> {{ item.Name
+                  }}</span>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+
+      <div class="containerTopbar__search" #dropdown2>
+
+        <input type="text" class="containerTopbar__input regular-16" placeholder="Buscar Productos"
+          [(ngModel)]="textQuery" name="textQuery" (ngModelChange)="onProductNameChange($event)"
+          (focus)="onInputFocus()" autocomplete="off" />
+
+        <div class="containerTopbar__input-button" (click)="onSearchProduct()">
+          <mat-icon>search</mat-icon>
+        </div>
+      </div>
+
+      <div *ngIf="isProducts" class="containerTopbar__suggestions">
+        <div *ngIf="!loadingProducts">
+          <div *ngFor="let item of listFiltered" class="containerTopbar__suggestions-item"
+            (click)="onSelectProduct(item)">
+            <div class="containerTopbar__sugges-item-img">
+              <img class="containerTopbar__sugges-img" (error)="onImageError(item)" [src]="item.ImagePath" alt="premio">
+            </div>
+            <div class="containerTopbar__sugges-item-info">
+              <span class="bold-16 primary">{{ item.Name}}</span>
+              <div>
+                <span class="regular-16 primary ">{{ item.Points | number:'1.0-0' }}</span><span
+                  class="regular-12 primary containerTopbar__space-points">Puntos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="bold-16 primary containerTopbar__text-not-result"
+          *ngIf="listFiltered.length == 0 && !loadingProducts">No hay resultados para esta búsqueda</span>
+        <div *ngIf="loadingProducts" class="containerTopbar__loading-products">
+          <mat-spinner diameter="25"></mat-spinner>
+        </div>
+      </div>
+    </form>
+
+    <!-- Mis puntos -->
+    <div class="containerTopbar__point primario" [routerLink]="['account/points']">
+      <span class="regular-12 primario ">Tus {{userData.person.account.pointName}}:</span>
+      <span class="regular-36 primario containerTopbar__point-num containerTopbar__fontZiseBig">{{
+        userData.person.account.pointsBalance | number
+        }}</span>
+    </div>
+
+    <!-- Saludo -->
+    <div class="containerTopbar__user primario">
+      <div class="containerTopbar__user-text bold-24 text-color primario containerTopbar__fontZise">{{ greet }}</div>
+      <span class="regular-24 primario text-color containerTopbar__fontZise">{{userData.person.names.split('
+        ')[0]}}</span>
+    </div>
+
+
+  </div>
+
+  <!-- header molvil -->
+  <div class="containerTopbar__headerMovil">
+
+    <div class="containerTopbar__headerMovil-row">
+      <!-- LOGO -->
+      <div class="containerTopbar__logo" (click)="goMain()"></div>
+
+      <!-- Mis puntos -->
+      <div class="containerTopbar__point primario" [routerLink]="['account/points']">
+        <span class="regular-12 primario">Tus {{userData.person.account.pointName}}:</span>
+        <span class="regular-36 primario containerTopbar__point-num containerTopbar__fontZise">{{
+          userData.person.account.pointsBalance | number
+          }}</span>
+      </div>
+
+      <!-- Saludo -->
+      <div class="containerTopbar__user">
+        <div class="containerTopbar__user-text bold-24 text-color primario containerTopbar__fontZise">{{ greet }}</div>
+        <div class="regular-24 primario text-color containerTopbar__fontZise">
+          {{userData.person.names.split(' ')[0]}}</div>
+      </div>
+    </div>
+
+
+    <!-- App Search-->
+    <form class="containerTopbar__formsearch ">
+      <div class="containerTopbar__category" #dropdown4>
+
+        <div class="containerTopbar__category-button" mat-button (click)="toggleMenuCategories()">
+          <span class="bold-16 primario">Categorías <mat-icon>{{ menuOpen ? 'keyboard_arrow_up' :
+              'keyboard_arrow_down'
+              }}</mat-icon></span>
+        </div>
+
+        <div *ngIf="menuOpen" class="containerTopbar__category-list" (click)="menuOpen = false">
+          <div class="containerTopbar__category-arrow"></div>
+          <div class="containerTopbar__contain-categorias">
+            <ng-container *ngFor="let item of categories; let last = last">
+              <div class="containerTopbar__category-item" [class.last]="last" (click)="selectCategory(item)">
+                <span class="regular-16"><mat-icon>{{ item.IconName ? item.IconName : 'star' }}</mat-icon> {{ item.Name
+                  }}</span>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="containerTopbar__search" #dropdown5>
+          <input type="text" class="containerTopbar__input regular-16" placeholder="Buscar Productos"
+            [(ngModel)]="textQuery" name="textQuery" (ngModelChange)="onProductNameChange($event)"
+            (focus)="onInputFocus()" autocomplete="off" />
+          <div class="containerTopbar__input-buttonMovil" (click)="onSearchProduct()">
+            <mat-icon>search</mat-icon>
+          </div>
+        </div>
+
+      </div>
+
+      <div *ngIf="isProducts" class="containerTopbar__suggestions">
+        <div *ngIf="!loadingProducts">
+          <div *ngFor="let item of listFiltered" class="containerTopbar__suggestions-item"
+            (click)="onSelectProduct(item)">
+            <div class="containerTopbar__sugges-item-img">
+              <img class="containerTopbar__sugges-img" (error)="onImageError(item)" [src]="item.ImagePath" alt="premio">
+            </div>
+            <div class="containerTopbar__sugges-item-info">
+              <span class="bold-16 primary">{{ item.Name }}</span>
+              <div>
+                <span class="regular-16 primary">{{ item.Points | number:'1.0-0' }}</span><span
+                  class="regular-12 primary ml-1">Puntos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="bold-16 primary containerTopbar__text-not-result" *ngIf="listFiltered.length == 0">No hay
+          resultados para esta búsqueda</span>
+        <div *ngIf="loadingProducts" class="containerTopbar__loading-products">
+          <mat-spinner diameter="25"></mat-spinner>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="containerTopbar__menu" *ngIf="menuItem">
+    <div class="containerTopbar__menufast">
+      <div class="containerTopbar__menufast-desk">
+        <div *ngFor="let item of menuItem.MenuItems" (click)="triggerMenuClick(item)"
+          class="containerTopbar__menufast-items">
+          <div class="regular-16 primario" [routerLink]="[item.Path]" routerLinkActive="router-link-active">{{ item.Name
+            }}</div>
+        </div>
+      </div>
+      <div class="containerTopbar__menufast-movil">
+        <div #dropdown6>
+          <div (click)="toggleMenuMovil()" class="containerTopbar__menuUser-btnBurguer">
+            <mat-icon>{{ menuOpenmovil ? 'close':'menu'}}</mat-icon>
+            <span class="bold-16 primario">Menú</span>
+          </div>
+
+
+          <div *ngIf="menuOpenmovil" (click)="menuOpenmovil = false">
+            <div class="containerTopbar__menuUser-contenMovil">
+              <div *ngFor="let item of menuItem.MenuItems" (click)="triggerMenuClick(item)"
+                class="containerTopbar__menufast-itemsMovil">
+                <div class="containerTopbar__menufast-itemMenu regular-16 primario" [routerLink]="[item.Path]"
+                  routerLinkActive="router-link-active">{{
+                  item.Name}} <mat-icon>keyboard_arrow_right</mat-icon> </div>
+              </div>
+            </div>
+            <div class="containerTopbar__menuUser-contenBack"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="containerTopbar__menuUser">
+
+      <!--Notificaciones-->
+      <div>
+        <div class="containerTopbar__alert">{{badgeNotification}}</div>
+
+        <div class="containerTopbar__menuUser-button containerTopbar__menuUser-buttonborder" ngbDropdown>
+          <div type="button" class="" id="page-header-notifications-dropdown" data-bs-toggle="dropdown"
+            aria-expanded="false" (click)="toggleMenuNotifi()" ngbDropdownToggle #toggleButtonNotifi>
+            <mat-icon>add_alert</mat-icon>
+          </div>
+
+          <div aria-labelledby="page-header-notifications-dropdown" ngbDropdownMenu>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- carrito -->
+      <div>
+        <div *ngIf="itemsCart > 0" class="containerTopbar__alert">{{itemsCart}}</div>
+        <div class="containerTopbar__menuUser-button containerTopbar__menuUser-buttonborder">
+          <div class="" (click)="goCart()">
+            <mat-icon>shopping_cart</mat-icon>
+          </div>
+        </div>
+      </div>
+
+      <!-- menu perfil -->
+      <div #dropdown3>
+        <div class=" containerTopbar__menuUser-user">
+          <div (click)="toggleMenuAcount()" class="containerTopbar__menuUser-icon"><mat-icon>{{ menuOpenUser ?
+              'close':'person'}}</mat-icon>
+          </div>
+
+          <div class="containerTopbar__menuUser-conten" *ngIf="menuOpenUser" (click)="menuOpenUser = false">
+            <div class="containerTopbar__arrowtopUser"></div>
+            <app-menu-profile (chooseOption)="toggleMenuAcount()"></app-menu-profile>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+</header>

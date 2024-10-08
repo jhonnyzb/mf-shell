@@ -1,0 +1,75 @@
+/* Estilos base del botón */
+.button {
+  border-radius: 50px;
+  border: none;
+  background-color: var(--ngx-valepro-color-tertiary);
+  width: 100%;
+  min-height: 44px;
+  color: var(--ngx-valepro-color-secondary);
+  margin: 2rem 0rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo del texto dentro del botón */
+.button__text {
+  margin-left: 8px;
+  /* Espacio entre el icono y el texto */
+}
+
+/* Estilo del ícono dentro del botón */
+.button__icon {
+  font-size: 24px;
+}
+
+/* Modificador para un botón elevado sombra */
+.button--raised {
+  box-shadow: 0 2px 4px var(--ngx-valepro-color-tertiary);
+}
+
+/* Modificador para un botón con bordes */
+.button--outlined {
+  border: 1px solid var(--ngx-valepro-color-tertiary);
+  background-color: transparent;
+}
+
+/* Modificador para un botón principal (por ejemplo, azul) */
+.button--primary {
+  color: white;
+  background-color: var(--ngx-valepro-color-tertiary);
+}
+
+/* Modificador para un botón secundario (por ejemplo, gris) */
+.button--secondary {
+  color: white;
+  background-color: #757575;
+}
+
+/* Estilos de hover */
+.button:hover {
+  opacity: 0.9;
+  box-shadow: 0 4px 8px #0003;
+}
+
+.buttonBarHeader {
+  border-radius: 22px;
+  background-color: var(--ngx-valepro-color-primary);
+  height: 44px;
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  box-sizing: border-box;
+
+  .titulo {
+    margin-left: 1%;
+    color: var(--ngx-valepro-color-secondary);
+  }
+}

@@ -1,0 +1,60 @@
+.transactionContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+
+    &__card {
+        box-shadow: 0px 0px 6px #00000029;
+        border-radius: 8px;
+        padding: 48px;
+        width: 90%;
+        max-width: 588px;
+        text-align: center;
+    }
+
+    &__card-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            color: var(--ngx-valepro-color-secondary);
+        }
+    }
+
+    &__table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+
+        tr {
+            display: flex;
+            justify-content: space-between;
+            color: var(--ngx-valepro-color-secondary);
+
+        }
+
+        tr:nth-child(even) {
+            background: #f4f4f4;
+        }
+
+        tr:nth-child(odd) {
+            background: #fff;
+        }
+
+        td {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .item {
+            text-align: left;
+        }
+
+        .detail {
+            text-align: right;
+        }
+    }
+}

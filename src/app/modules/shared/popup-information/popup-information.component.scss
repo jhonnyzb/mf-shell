@@ -1,0 +1,68 @@
+.content-img-list {
+  background-color: var(--ngx-valepro-color-blanco);
+  max-height: 660px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-listado {
+  width: 100%;
+}
+
+a {
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.icon-close {
+  width: 50px;
+  height: 50px;
+  opacity: 0.3;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  border-radius: 50%;
+  z-index: 1;
+  cursor: pointer;
+
+}
+
+@media (max-width: 768px) {
+  .content-img-list {
+    max-height: auto;
+    height: auto;
+  }
+
+  .icon-close {
+    &::before {
+      font-size: 16px;
+    }
+  }
+}
+
+.contenIcon {
+  width: 50px;
+  height: 50px;
+  opacity: .3;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  border-radius: 50%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.contenIcon:hover {
+
+  background-color: var(--ngx-valepro-color-tertiary);
+
+}
+
+.icon {
+  position: absolute;
+  right: 1.8rem;
+  top: 1.8rem;
+  color: var(--ngx-valepro-color-tertiary);
+}

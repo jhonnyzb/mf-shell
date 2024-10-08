@@ -1,0 +1,135 @@
+.containerFooter {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 7px;
+  justify-items: stretch;
+  max-width: 1024px;
+  height: 100%;
+  padding: 1rem;
+  margin: 0 auto;
+  align-items: start;
+  background-color: var(--ngx-valepro-color-primary);
+
+
+  &__contacto {
+    max-width: 475px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+
+  }
+
+  &__contacto-line {
+    border-bottom: 8px solid var(--ngx-valepro-color-tertiary);
+    padding-top: 8px;
+    background-color: var(--ngx-valepro-color-primary);
+  }
+
+  &__contacto-title {
+    padding-bottom: 1rem;
+    text-align: center;
+    color: var(--ngx-valepro-color-secondary);
+  }
+
+  &__contacto-a {
+    text-decoration: none;
+    color: var(--ngx-valepro-color-secondary);
+  }
+
+  &__contacto-separador {
+    display: none;
+
+  }
+
+  &__contacto-linea {
+    width: 2px;
+    height: 90px;
+    background-color: var(--ngx-valepro-color-tertiary);
+    opacity: 40%;
+  }
+
+  &__legal {
+    color: var(--ngx-valepro-color-secondary);
+    background-color: var(--ngx-valepro-color-prmary);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0rem 1rem 0rem;
+  }
+
+  &__contacto-bottomLine {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    border-bottom: 1px solid var(--ngx-valepro-color-secondary);
+    cursor: pointer;
+    text-align: left;
+  }
+}
+
+.color-text {
+  color: var(--ngx-valepro-color-secondary);
+}
+
+
+
+////////////////////// Media Queries estructura BEM /////////////////////
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .containerFooter {
+    grid-template-columns: 1fr 2px 1fr;
+    grid-row-gap: 20px;
+
+    &__contacto-separador {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 100%;
+
+    }
+
+    &__contacto-title {
+      padding-bottom: 1rem;
+      text-align: left;
+    }
+
+    &__contacto {
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+  .containerFooter {
+    grid-template-columns: 1fr 2px 1fr;
+    grid-row-gap: 20px;
+
+    &__contacto-separador {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 100%;
+
+    }
+
+    &__contacto-title {
+      padding-bottom: 1rem;
+      text-align: left;
+    }
+
+    &__contacto {
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
+
+}

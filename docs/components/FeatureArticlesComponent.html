@@ -1,0 +1,1581 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>wr-shell documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">wr-shell documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  FeatureArticlesComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/shared/feature-articles/feature-articles.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-feature-articles</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./feature-articles.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./feature-articles.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#config" >config</a>
+                            </li>
+                            <li>
+                                <a href="#slides" >slides</a>
+                            </li>
+                            <li>
+                                <a href="#user" >user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getFeatureProducts" >getFeatureProducts</a>
+                            </li>
+                            <li>
+                                <a href="#goToDetail" >goToDetail</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onAddCart" >onAddCart</a>
+                            </li>
+                            <li>
+                                <a href="#onClikcCart" >onClikcCart</a>
+                            </li>
+                            <li>
+                                <a href="#onDialogProduct" >onDialogProduct</a>
+                            </li>
+                            <li>
+                                <a href="#onEventCart" >onEventCart</a>
+                            </li>
+                            <li>
+                                <a href="#onImageError" >onImageError</a>
+                            </li>
+                            <li>
+                                <a href="#redirectCatalog" >redirectCatalog</a>
+                            </li>
+                            <li>
+                                <a href="#sendGtmDataCatalog" >sendGtmDataCatalog</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(catalogRepository: <a href="../injectables/CatalogRepository.html" target="_self">CatalogRepository</a>, router: Router, dialogService: <a href="../injectables/DialogService.html" target="_self">DialogService</a>, gtmEventRepository: <a href="../classes/GtmDispatchEventsRepository.html" target="_self">GtmDispatchEventsRepository</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/modules/shared/feature-articles/feature-articles.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>catalogRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CatalogRepository.html" target="_self" >CatalogRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialogService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DialogService.html" target="_self" >DialogService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>gtmEventRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/GtmDispatchEventsRepository.html" target="_self" >GtmDispatchEventsRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFeatureProducts"></a>
+                    <span class="name">
+                        <span ><b>getFeatureProducts</b></span>
+                        <a href="#getFeatureProducts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFeatureProducts()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="50"
+                                    class="link-to-prism">src/app/modules/shared/feature-articles/feature-articles.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene los productos destacados.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goToDetail"></a>
+                    <span class="name">
+                        <span ><b>goToDetail</b></span>
+                        <a href="#goToDetail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goToDetail(productId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="75"
+                                    class="link-to-prism">src/app/modules/shared/feature-articles/feature-articles.component.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Navega a la página de detalle del producto.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>productId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El ID del producto al que se desea navegar.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="43"
+                                    class="link-to-prism">src/app/modules/shared/feature-articles/feature-articles.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onAddCart"></a>
+                    <span class="name">
+                        <span ><b>onAddCart</b></span>
+                        <a href="#onAddCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onAddCart(product: <a href="../classes/ProductDetailModel.html" target="_self">ProductDetailModel</a>, phoneId: null)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="141"
+                                    class="link-to-prism">src/app/modules/shared/feature-articles/feature-articles.component.ts:141</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Agrega un producto al carrito de compras.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>product</td>
+                                            <td>
+                                                            <code><a href="../classes/ProductDetailModel.html" target="_self" >ProductDetailModel</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    <ul>
+<li>El objeto del producto que se va a agregar al carrito.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>phoneId</td>
+                                            <td>
+                                                        <code>null</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>null</code>
+                                            </td>
+
+                                            <td>
+                                                    <ul>
+<li>(Opcional) El ID del teléfono del operador asociado al producto.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClikcCart"></a>
+                    <span class="name">
+                        <span ><b>onClikcCart</b></span>
+                        <a href="#onClikcCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onClikcCart(productId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="92"
+                                    class="link-to-prism">src/app/modules/shared/feature-articles/feature-articles.component.ts:92</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Maneja el evento de clic en el carrito.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>productId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El ID del producto seleccionado.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDialogProduct"></a>
+                    <span class="name">
+                        <span ><b>onDialogProduct</b></span>
+                        <a href="#onDialogProduct"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDialogProduct(product: <a href="../classes/ProductDetailModel.html" target="_self">ProductDetailModel</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="109"
+                                    class="link-to-prism">src/app/modules/shared/feature-articles/feature-articles.component.ts:109</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Abre un diálogo de producto y realiza acciones dependiendo de la clase del producto.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>product</td>
+                                            <td>
+                                                            <code><a href="../classes/ProductDetailModel.html" target="_self" >ProductDetailModel</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El objeto del producto seleccionado.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Nada.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onEventCart"></a>
+                    <span class="name">
+                        <span ><b>onEventCart</b></span>
+                        <a href="#onEventCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onEventCart(quantity: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="177"
+                                    class="link-to-prism">src/app/modules/shared/feature-articles/feature-articles.component.ts:177</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Maneja el evento de agregar al carrito.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>quantity</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>La cantidad de elementos a agregar al carrito.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onImageError"></a>
+                    <span class="name">
+                        <span ><b>onImageError</b></span>
+                        <a href="#onImageError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onImageError(item: literal type)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="66"
+                                    class="link-to-prism">src/app/modules/shared/feature-articles/feature-articles.component.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Maneja el evento de error de imagen.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>item</td>
+                                            <td>
+                                                        <code>literal type</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El objeto que contiene la URL de la imagen.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="redirectCatalog"></a>
+                    <span class="name">
+                        <span ><b>redirectCatalog</b></span>
+                        <a href="#redirectCatalog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>redirectCatalog()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="194"
+                                    class="link-to-prism">src/app/modules/shared/feature-articles/feature-articles.component.ts:194</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Redirige al catálogo principal.</p>
+<p>Envía los datos de GTM relacionados con el catálogo y navega hacia la ruta &quot;/main/catalog&quot;.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>void</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendGtmDataCatalog"></a>
+                    <span class="name">
+                        <span ><b>sendGtmDataCatalog</b></span>
+                        <a href="#sendGtmDataCatalog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sendGtmDataCatalog()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="205"
+                                    class="link-to-prism">src/app/modules/shared/feature-articles/feature-articles.component.ts:205</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía datos de GTM al catálogo.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="config"></a>
+                    <span class="name">
+                        <span ><b>config</b></span>
+                        <a href="#config"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    swipe: true,
+    variableWidth: true,
+    firstMobile: true,
+    slidesToScroll: 3,
+    infinite: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/modules/shared/feature-articles/feature-articles.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="slides"></a>
+                    <span class="name">
+                        <span ><b>slides</b></span>
+                        <a href="#slides"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FeatureProductsModelResponse[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/modules/shared/feature-articles/feature-articles.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user"></a>
+                    <span class="name">
+                        <span ><b>user</b></span>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>getSession&lt;LoginValeproResponseModel&gt;(&#x27;accountValepro&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/modules/shared/feature-articles/feature-articles.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &quot;@angular/core&quot;;
+import { Router } from &quot;@angular/router&quot;;
+import { DialogParamsAward } from &quot;src/app/core/models/dialogParams.model&quot;;
+import { GTMSelectContent } from &quot;src/app/core/models/gtm-models/gtmSelectContent.model&quot;;
+import { CartModel } from &quot;src/app/core/models/insite/cart.model&quot;;
+import { FeatureProductsModelResponse } from &quot;src/app/core/models/response/featureProducts.model&quot;;
+import { ProductDetailByIdModel, ProductDetailModel } from &quot;src/app/core/models/response/productDetail.model&quot;;
+import { ResponseBaseModel } from &quot;src/app/core/models/response/responseBase.model&quot;;
+import { CatalogRepository } from &quot;src/app/core/repositories/catalog.repository&quot;;
+import { GtmDispatchEventsRepository } from &quot;src/app/core/repositories/gtmDispatchEvent.repository&quot;;
+import { DialogService } from &quot;src/app/core/utils/dialog.service&quot;;
+import { getSession, saveSession } from &quot;src/app/core/utils/encryptData&quot;;
+import { LoginValeproResponseModel } from &quot;src/app/infrastructure/dto/response/loginValeproResponse.model&quot;;
+
+@Component({
+  selector: &quot;app-feature-articles&quot;,
+  templateUrl: &quot;./feature-articles.component.html&quot;,
+  styleUrls: [&quot;./feature-articles.component.scss&quot;],
+})
+
+/**
+ * Componente para mostrar artículos destacados.
+ */
+export class FeatureArticlesComponent {
+  config &#x3D; {
+    swipe: true,
+    variableWidth: true,
+    firstMobile: true,
+    slidesToScroll: 3,
+    infinite: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000
+  };
+
+  slides: FeatureProductsModelResponse[] &#x3D; [];
+  user &#x3D; getSession&lt;LoginValeproResponseModel&gt;(&#x27;accountValepro&#x27;);
+
+
+  constructor(private catalogRepository: CatalogRepository, private router: Router, private dialogService: DialogService, private gtmEventRepository: GtmDispatchEventsRepository,
+  ) { }
+
+  ngOnInit() {
+    this.getFeatureProducts();
+  }
+
+  /**
+   * Obtiene los productos destacados.
+   */
+  getFeatureProducts() {
+    this.catalogRepository.getFeatureProducts().subscribe({
+      next: (resp: ResponseBaseModel&lt;FeatureProductsModelResponse[]&gt;) &#x3D;&gt; {
+        this.slides &#x3D; resp.data;
+      },
+      error: (error) &#x3D;&gt; {
+        this.slides &#x3D; [];
+      }
+    })
+  }
+
+  /**
+   * Maneja el evento de error de imagen.
+   *
+   * @param item - El objeto que contiene la URL de la imagen.
+   */
+  onImageError(item: { ImageUrl: string }) {
+    item.ImageUrl &#x3D; &#x27;../../../../assets/img/imageCatalog.png&#x27;;
+  }
+
+  /**
+   * Navega a la página de detalle del producto.
+   *
+   * @param productId - El ID del producto al que se desea navegar.
+   */
+  goToDetail(productId: number) {
+    this.catalogRepository.getProductId(productId).subscribe({
+      next: (resp: ResponseBaseModel&lt;ProductDetailByIdModel&gt;) &#x3D;&gt; {
+        saveSession(resp.data.Award, &#x27;wr-c-product&#x27;);
+        this.router.navigate([&quot;/main/catalog/detail&quot;]);
+        const onChange &#x3D; new CustomEvent(&#x27;on-change-product&#x27;, { detail: null });
+        document.dispatchEvent(onChange);
+      },
+      error: (error) &#x3D;&gt; { }
+    })
+  }
+
+  /**
+   * Maneja el evento de clic en el carrito.
+   *
+   * @param productId - El ID del producto seleccionado.
+   */
+  onClikcCart(productId: number) {
+    this.catalogRepository.getProductId(productId).subscribe({
+      next: (resp: ResponseBaseModel&lt;ProductDetailByIdModel&gt;) &#x3D;&gt; {
+        saveSession(resp.data.Award, &#x27;wr-c-product&#x27;);
+        this.onDialogProduct(resp.data.Award)
+      },
+      error: (error) &#x3D;&gt; { }
+    })
+
+  }
+
+  /**
+   * Abre un diálogo de producto y realiza acciones dependiendo de la clase del producto.
+   *
+   * @param product - El objeto del producto seleccionado.
+   * @returns Nada.
+   */
+  onDialogProduct(product: ProductDetailModel) {
+    const typesProductsPopups &#x3D; [1, 2, 6];
+    if (product.ProductClass &#x3D;&#x3D;&#x3D; 4) {
+      this.onAddCart(product);
+      return;
+    }
+    if (product.ProductClass &#x3D;&#x3D;&#x3D; 3) {
+      saveSession(product, &#x27;wr-c-product&#x27;);
+      this.router.navigate([&quot;/main/catalog/detail&quot;]);
+      return;
+    }
+    if (typesProductsPopups.includes(product.ProductClass)) {
+      let dialogParams: DialogParamsAward &#x3D; {
+        Msg: null,
+        Page: null,
+        TypeAward: product.ProductClass
+      };
+      this.dialogService.openConfirmDialogProduct(product.ProductClassAuxiliaryMessage, dialogParams)
+        .afterClosed().subscribe((resp) &#x3D;&gt; {
+          if (resp.flag) {
+            this.onAddCart(product, resp.phoneId);
+          }
+        })
+    }
+  }
+
+  /**
+   * Agrega un producto al carrito de compras.
+   *
+   * @param product - El objeto del producto que se va a agregar al carrito.
+   * @param phoneId - (Opcional) El ID del teléfono del operador asociado al producto.
+   */
+  onAddCart(product: ProductDetailModel, phoneId &#x3D; null) {
+    let cart &#x3D; getSession&lt;CartModel[]&gt;(&#x27;wr-c-cart&#x27;) || [];
+    let index &#x3D; cart.findIndex(p &#x3D;&gt; p.AwardId &#x3D;&#x3D; product.AwardId);
+    if (index !&#x3D;&#x3D; -1) {
+      cart[index].Quantity &#x3D; cart[index].Quantity + 1;
+      cart[index].OperatorPhoneId &#x3D; product.ProductClass &#x3D;&#x3D;&#x3D; 6 ? phoneId : null;
+      saveSession(cart, &#x27;wr-c-cart&#x27;);
+    } else {
+      const selectProductSave: CartModel &#x3D; {
+        AwardId: product.AwardId,
+        LongName: product.LongName,
+        ShortName: product.ShortName,
+        Description: product.Description,
+        Cost: product.Cost,
+        Points: product.Points,
+        Observations: product.Observations,
+        ProductClass: product.ProductClass,
+        Quantity: 1,
+        OperatorPhoneId: phoneId,
+        ImagePath: product.AwardImages[0] ? product.AwardImages[0].ImagePath : &#x27;&#x27;
+      }
+      cart.push(selectProductSave);
+      saveSession(cart, &#x27;wr-c-cart&#x27;)
+    }
+    let q &#x3D; 0;
+    cart.forEach((product) &#x3D;&gt; {
+      q &#x3D; q + product.Quantity
+    })
+    this.onEventCart(q);
+  }
+
+  /**
+   * Maneja el evento de agregar al carrito.
+   *
+   * @param quantity - La cantidad de elementos a agregar al carrito.
+   */
+  onEventCart(quantity: number) {
+    const quantityCart &#x3D; new CustomEvent(&#x27;numberOfCartItemsEvent&#x27;, { detail: quantity });
+    document.dispatchEvent(quantityCart);
+
+    const onChange &#x3D; new CustomEvent(&#x27;on-change-product-confirm&#x27;, { detail: null });
+    document.dispatchEvent(onChange);
+    this.router.navigate([&quot;/main/catalog/cart-confirm&quot;]);
+  }
+
+  /**
+   * Redirige al catálogo principal.
+   *
+   * Envía los datos de GTM relacionados con el catálogo y navega hacia la ruta &quot;/main/catalog&quot;.
+   *
+   * @param none
+   * @returns void
+   */
+  redirectCatalog(): void {
+    this.sendGtmDataCatalog();
+    this.router.navigate([&quot;/main/catalog&quot;]);
+  }
+
+  /**
+   * Envía datos de GTM al catálogo.
+   *
+   * @param {GTMSelectContent} tagData - Los datos del evento GTM.
+   * @returns {void}
+   */
+  sendGtmDataCatalog() {
+    let tagData: GTMSelectContent &#x3D; {
+      event: &quot;Select_content&quot;,
+      ParameterTarget: &quot;Home&quot;,
+      ParameterType: &#x27;button&#x27;,
+      ParameterCategory: &#x27;Home-Vale PRO&#x27;,
+      IDAccount: this.user.AccountId,
+      IDProgram: this.user.ProgramId,
+      IDPerson: this.user.PersonId,
+      UserName: this.user.UserName,
+      ParameterText: &#x27;Ver Catalogo&#x27;,
+      ParameterItemID: &#x27;&#x27;
+    }
+    this.gtmEventRepository.sendEvent(tagData);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;slides.length &gt; 0&quot;&gt;
+  &lt;div class&#x3D;&quot;buttonBarHeader barTitle&quot;&gt;
+    &lt;span class&#x3D;&quot;bold-16 primario titulo&quot;&gt;Artículos destacados&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;featureProducts__main&quot;&gt;
+    &lt;div *ngIf&#x3D;&quot;slides.length &gt; 0&quot; class&#x3D;&quot;featureProducts__transparent&quot;&gt;
+    &lt;/div&gt;
+    &lt;ngx-slick-carousel [config]&#x3D;&quot;config&quot; class&#x3D;&quot;swiper&quot;&gt;
+      &lt;div class&#x3D;&quot;featureProducts__wrapperItem&quot; ngxSlickItem *ngFor&#x3D;&quot;let item of slides&quot;&gt;
+        &lt;div class&#x3D;&quot;featureProducts__itemSlick&quot;&gt;
+          &lt;div class&#x3D;&quot;featureProducts__containImgSlick&quot; (click)&#x3D;&quot;goToDetail(item.AwardId)&quot;&gt;
+            &lt;img class&#x3D;&quot;featureProducts__img&quot; (error)&#x3D;&quot;onImageError(item)&quot; [src]&#x3D;item.ImageUrl alt&#x3D;&quot;premio&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;featureProducts__infoSlick&quot;&gt;
+            &lt;span class&#x3D;&quot;bold-12 primary&quot;&gt;{{item.Name}}&lt;/span&gt;
+            &lt;div class&#x3D;&quot;featureProducts__pointsCart&quot;&gt;
+              &lt;div class&#x3D;&quot;featureProducts__points&quot;&gt;
+                &lt;span class&#x3D;&quot;regular-16 primary&quot;&gt;{{ item.Points | number:&#x27;1.0-0&#x27; }}&lt;/span&gt;&lt;span
+                  class&#x3D;&quot;regular-12 featureProducts__spacePoints primary&quot;&gt;Puntos&lt;/span&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;featureProducts__cart&quot; (click)&#x3D;&quot;onClikcCart(item.AwardId)&quot;&gt;
+                &lt;mat-icon class&#x3D;&quot;featureProducts__iconCart&quot;&gt;shopping_cart&lt;/mat-icon&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/ngx-slick-carousel&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;bar-btn&quot;&gt;
+    &lt;div class&#x3D;&quot;button btn-allShow&quot; (click)&#x3D;&quot;redirectCatalog()&quot;&gt;&lt;span class&#x3D;&quot;bold-16 primary&quot;&gt;Ver catálogo&lt;/span&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./feature-articles.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.featureProducts {
+    &amp;__main {
+        position: relative;
+        margin-top: 15px;
+    }
+
+    &amp;__wrapperItem {
+        height: 255px;
+        width: 240px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3px;
+        margin-right: 10px;
+    }
+
+    &amp;__itemSlick {
+        height: 100%;
+        width: 100%;
+        box-shadow: 0 0 6px #00000029;
+        border-radius: 8px;
+    }
+
+    &amp;__containImgSlick {
+        height: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &amp;__img {
+        width: auto;
+        height: 90%;
+    }
+
+    &amp;__infoSlick {
+        height: 95px;
+        background-color: var(--ngx-valepro-color-primary);
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 12px;
+        padding-right: 12px;
+        color: white;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    &amp;__pointsCart {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    &amp;__cart {
+        align-items: center;
+        background-color: var(--ngx-valepro-color-tertiary);
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        height: 40px;
+        justify-content: center;
+        width: 40px;
+    }
+
+    &amp;__iconCart {
+        font-size: 22px;
+        height: 22px;
+        width: 22px;
+        color: var(--ngx-valepro-color-secondary);
+    }
+
+    &amp;__transparent {
+        position: absolute;
+        z-index: 2;
+        right: -1px;
+        top: 0;
+        height: 275px;
+        width: 80px;
+        background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+        border: none;
+    }
+
+    &amp;__spacePoints {
+        margin-left: 3px;
+    }
+}
+
+.bar-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+    .btn-allShow {
+        width: 260px;
+        margin: 0.5rem 0 1rem 0;
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="slides.length > 0">  <div class="buttonBarHeader barTitle">    <span class="bold-16 primario titulo">Artículos destacados</span>  </div>  <div class="featureProducts__main">    <div *ngIf="slides.length > 0" class="featureProducts__transparent">    </div>    <ngx-slick-carousel [config]="config" class="swiper">      <div class="featureProducts__wrapperItem" ngxSlickItem *ngFor="let item of slides">        <div class="featureProducts__itemSlick">          <div class="featureProducts__containImgSlick" (click)="goToDetail(item.AwardId)">            <img class="featureProducts__img" (error)="onImageError(item)" [src]=item.ImageUrl alt="premio">          </div>          <div class="featureProducts__infoSlick">            <span class="bold-12 primary">{{item.Name}}</span>            <div class="featureProducts__pointsCart">              <div class="featureProducts__points">                <span class="regular-16 primary">{{ item.Points | number:\'1.0-0\' }}</span><span                  class="regular-12 featureProducts__spacePoints primary">Puntos</span>              </div>              <div class="featureProducts__cart" (click)="onClikcCart(item.AwardId)">                <mat-icon class="featureProducts__iconCart">shopping_cart</mat-icon>              </div>            </div>          </div>        </div>      </div>    </ngx-slick-carousel>  </div>  <div class="bar-btn">    <div class="button btn-allShow" (click)="redirectCatalog()"><span class="bold-16 primary">Ver catálogo</span></div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BannerComponent', 'selector': 'app-banner'},{'name': 'FeatureArticlesComponent', 'selector': 'app-feature-articles'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MatCloseSessionDialogComponent', 'selector': 'app-mat-close-session-dialog'},{'name': 'MatConfirmAwardComponent', 'selector': 'app-mat-confirm-award'},{'name': 'MatConfirmDialogComponent', 'selector': 'app-mat-confirm-dialog'},{'name': 'MatFormNequiDaviplataComponent', 'selector': 'app-mat-form-nequi-daviplata'},{'name': 'MatFormProductComponent', 'selector': 'app-mat-form-product'},{'name': 'MenuProfileComponent', 'selector': 'app-menu-profile'},{'name': 'MixpayResponseComponent', 'selector': 'app-mixpay-response'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'PolicyAcceptanceDialogComponent', 'selector': 'app-policy-acceptance-dialog'},{'name': 'PopupInformationComponent', 'selector': 'app-popup-information'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'WidgetsComponent', 'selector': 'app-widgets'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'FeatureArticlesComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'FeatureArticlesComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

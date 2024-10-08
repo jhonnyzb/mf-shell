@@ -1,0 +1,17 @@
+<div class="text-center content-img-list">
+  <div class="contenIcon" (click)="closeDialog()">
+  </div>
+  <mat-icon class="icon">close</mat-icon>
+  <div class="icon">
+
+
+  </div>
+  <div>
+    <a *ngIf="!UrlDestinoNuevaVentana" (click)="navigation(data.url)" mat-dialog-close>
+      <img [src]="data.image" class="img-listado" alt="Información" />
+    </a>
+    <a *ngIf="UrlDestinoNuevaVentana" [href]="data.url" target="_blank" mat-dialog-close>
+      <img [src]="data.image" class="img-listado" alt="Información" />
+    </a>
+  </div>
+</div>

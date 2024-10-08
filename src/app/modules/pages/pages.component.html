@@ -1,0 +1,16 @@
+<div class="contentMmain" id="layout-wrapper">
+
+  <div class="contentMmain__topbar">
+    <app-topbar (settingsButtonClicked)="onSettingsButtonClicked()"
+      (mobileMenuButtonClicked)="onToggleMobileMenu()"></app-topbar>
+  </div>
+
+  <div class="contentMmain__router">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="contentMmain__footer">
+    <app-footer></app-footer>
+  </div>
+
+</div>

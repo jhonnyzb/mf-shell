@@ -1,0 +1,1486 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>wr-shell documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">wr-shell documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AppComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/app.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-root</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./app.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./app.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#account" >account</a>
+                            </li>
+                            <li>
+                                <a href="#activeSpinner" >activeSpinner</a>
+                            </li>
+                            <li>
+                                <a href="#isCondensed" >isCondensed</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading" >isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#opened" >opened</a>
+                            </li>
+                            <li>
+                                <a href="#previousUrl" >previousUrl</a>
+                            </li>
+                            <li>
+                                <a href="#programId" >programId</a>
+                            </li>
+                            <li>
+                                <a href="#user" >user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#emitEventCopyright" >emitEventCopyright</a>
+                            </li>
+                            <li>
+                                <a href="#getProgram" >getProgram</a>
+                            </li>
+                            <li>
+                                <a href="#loadFavicon" >loadFavicon</a>
+                            </li>
+                            <li>
+                                <a href="#loadGtmScripts" >loadGtmScripts</a>
+                            </li>
+                            <li>
+                                <a href="#loadProgram" >loadProgram</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSettingsButtonClicked" >onSettingsButtonClicked</a>
+                            </li>
+                            <li>
+                                <a href="#onToggleMobileMenu" >onToggleMobileMenu</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: ActivatedRoute, lookAndFeelRepository: <a href="../classes/LookAndFeelRepository.html" target="_self">LookAndFeelRepository</a>, toastGenericRepository: <a href="../classes/ToastGenericRepository.html" target="_self">ToastGenericRepository</a>, programService: <a href="../injectables/ProgramService.html" target="_self">ProgramService</a>, router: Router, renderer: Renderer2, gtmEventsRepository: <a href="../classes/GtmEventsRepository.html" target="_self">GtmEventsRepository</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/app.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>lookAndFeelRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/LookAndFeelRepository.html" target="_self" >LookAndFeelRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastGenericRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/ToastGenericRepository.html" target="_self" >ToastGenericRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>programService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProgramService.html" target="_self" >ProgramService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>renderer</td>
+                                                  
+                                                        <td>
+                                                                    <code>Renderer2</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>gtmEventsRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/GtmEventsRepository.html" target="_self" >GtmEventsRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="emitEventCopyright"></a>
+                    <span class="name">
+                        <span ><b>emitEventCopyright</b></span>
+                        <a href="#emitEventCopyright"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>emitEventCopyright(copyright: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="220"
+                                    class="link-to-prism">src/app/app.component.ts:220</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Emite un evento de derechos de autor.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>copyright</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>El texto de los derechos de autor.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProgram"></a>
+                    <span class="name">
+                        <span ><b>getProgram</b></span>
+                        <a href="#getProgram"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProgram(programId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="172"
+                                    class="link-to-prism">src/app/app.component.ts:172</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene un programa específico.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>programId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El ID del programa que se desea obtener.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadFavicon"></a>
+                    <span class="name">
+                        <span ><b>loadFavicon</b></span>
+                        <a href="#loadFavicon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadFavicon(progamName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, iconUrl: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="191"
+                                    class="link-to-prism">src/app/app.component.ts:191</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga el favicon de la aplicación y actualiza el título de la página.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>progamName</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El nombre del programa que se utilizará como título de la página.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>iconUrl</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>La URL del favicon que se utilizará en la página.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadGtmScripts"></a>
+                    <span class="name">
+                        <span ><b>loadGtmScripts</b></span>
+                        <a href="#loadGtmScripts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadGtmScripts(gtmCode: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="127"
+                                    class="link-to-prism">src/app/app.component.ts:127</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga los scripts de Google Tag Manager en el documento.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>gtmCode</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El código de Google Tag Manager.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadProgram"></a>
+                    <span class="name">
+                        <span ><b>loadProgram</b></span>
+                        <a href="#loadProgram"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadProgram()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="91"
+                                    class="link-to-prism">src/app/app.component.ts:91</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga el programa actual.</p>
+<p>Si la URL es &#39;<a href="http://localhost:4200">http://localhost:4200</a>&#39;, se cambia a &#39;<a href="https://stage-website.valefielcomercios.com">https://stage-website.valefielcomercios.com</a>&#39;.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="73"
+                                    class="link-to-prism">src/app/app.component.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método de ciclo de vida que se ejecuta después de que se haya inicializado el componente.
+Carga el programa y agrega un listener para el evento &#39;gtmEvent&#39;.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>void</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSettingsButtonClicked"></a>
+                    <span class="name">
+                        <span ><b>onSettingsButtonClicked</b></span>
+                        <a href="#onSettingsButtonClicked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSettingsButtonClicked()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="163"
+                                    class="link-to-prism">src/app/app.component.ts:163</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Activa o desactiva la clase &quot;right-bar-enabled&quot; en el elemento body del documento.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onToggleMobileMenu"></a>
+                    <span class="name">
+                        <span ><b>onToggleMobileMenu</b></span>
+                        <a href="#onToggleMobileMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onToggleMobileMenu()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="205"
+                                    class="link-to-prism">src/app/app.component.ts:205</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Cambia el estado del menú móvil.</p>
+<p>Esta función alterna el valor de la propiedad <code>isCondensed</code>, agrega o remueve las clases CSS &quot;sidebar-enable&quot; y &quot;vertical-collpsed&quot; al elemento <code>body</code> del documento, y remueve la clase &quot;vertical-collpsed&quot; si el ancho de la pantalla es menor o igual a 768 píxeles.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>No devuelve ningún valor.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="account"></a>
+                    <span class="name">
+                        <span ><b>account</b></span>
+                        <a href="#account"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/app.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activeSpinner"></a>
+                    <span class="name">
+                        <span ><b>activeSpinner</b></span>
+                        <a href="#activeSpinner"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/app.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isCondensed"></a>
+                    <span class="name">
+                        <span ><b>isCondensed</b></span>
+                        <a href="#isCondensed"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/app.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoading"></a>
+                    <span class="name">
+                        <span ><b>isLoading</b></span>
+                        <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/app.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="opened"></a>
+                    <span class="name">
+                        <span ><b>opened</b></span>
+                        <a href="#opened"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/app.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="previousUrl"></a>
+                    <span class="name">
+                        <span ><b>previousUrl</b></span>
+                        <a href="#previousUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/app.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="programId"></a>
+                    <span class="name">
+                        <span ><b>programId</b></span>
+                        <a href="#programId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/app.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user"></a>
+                    <span class="name">
+                        <span ><b>user</b></span>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/app.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Renderer2 } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute, NavigationStart, Router } from &#x27;@angular/router&#x27;;
+import { saveSession } from &#x27;./core/utils/encryptData&#x27;;
+import { applyTheme } from &#x27;./core/utils/styleLoad&#x27;;
+import { applyFonts } from &#x27;./core/utils/fontsLoad&#x27;;
+import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;;
+import { UrlToProgramModel } from &#x27;./core/models/response/urlToProgram.model&#x27;;
+import { ResponseBaseModel } from &#x27;./core/models/response/responseBase.model&#x27;;
+import { ProgramRequestModel } from &#x27;./core/models/request/programRequest.model&#x27;;
+import { LookAndFeelRepository } from &#x27;./core/repositories/lookAndFeel.repository&#x27;;
+import { ToastGenericRepository } from &#x27;./core/repositories/toastGeneric.repository&#x27;;
+import { ProgramDto } from &#x27;./infrastructure/dto/valefiel/programsResponse.dto&#x27;;
+import { environment } from &#x27;src/environments/environment&#x27;;
+import { ProgramService } from &#x27;./infrastructure/services/valefiel/program-service&#x27;;
+import { GtmEventsRepository } from &#x27;./core/repositories/gtmEvents.repository&#x27;;
+
+@Component({
+  selector: &#x27;app-root&#x27;,
+  templateUrl: &#x27;./app.component.html&#x27;,
+  styleUrls: [&#x27;./app.component.scss&#x27;],
+})
+/**
+ * Componente principal de la aplicación.
+ *
+ * @remarks
+ * Este componente es responsable de cargar el programa actual, gestionar eventos de navegación, cargar scripts de Google Tag Manager, activar/desactivar la barra de configuración, obtener un programa específico, cargar el favicon de la aplicación, cambiar el estado del menú móvil y emitir eventos de derechos de autor.
+ */
+export class AppComponent {
+
+  previousUrl: any;
+  activeSpinner: boolean &#x3D; false;
+  opened!: boolean;
+  isLoading: boolean &#x3D; false;
+  user: any &#x3D; {};
+  account: any &#x3D; {};
+  isCondensed &#x3D; false;
+  programId: number;
+
+  constructor(
+    route: ActivatedRoute,
+    private lookAndFeelRepository: LookAndFeelRepository,
+    private toastGenericRepository: ToastGenericRepository,
+    private programService: ProgramService,
+    private router: Router,
+    private renderer: Renderer2,
+    private gtmEventsRepository: GtmEventsRepository,
+
+  ) {
+    this.router.events
+      .subscribe((event) &#x3D;&gt; {
+        if (event instanceof NavigationStart) {
+          if (this.previousUrl) {
+            this.renderer.removeClass(document.body, this.previousUrl);
+          }
+          const currentUrlSlug &#x3D; event.url.split(&#x27;?&#x27;)[0].slice(1);
+
+          if (currentUrlSlug) {
+            this.renderer.addClass(document.body, currentUrlSlug.split(&#x27;/&#x27;)[0].slice(0));
+          } else {
+            this.renderer.addClass(document.body, &quot;default&quot;);
+          }
+          this.previousUrl &#x3D; currentUrlSlug;
+        }
+      });
+  }
+
+  /**
+   * Método de ciclo de vida que se ejecuta después de que se haya inicializado el componente.
+   * Carga el programa y agrega un listener para el evento &#x27;gtmEvent&#x27;.
+   *
+   * @returns void
+   */
+  ngOnInit(): void {
+    this.loadProgram();
+    document.addEventListener(&#x27;gtmEvent&#x27;, (event: any) &#x3D;&gt; {
+      this.gtmEventsRepository.sendEvent(event.detail);
+    });
+  }
+
+
+  /**
+ * Carga el programa actual.
+ *
+ * @description Esta función carga el programa actual obteniendo la URL y realizando una solicitud al servidor.
+ * Si la URL es &#x27;http://localhost:4200&#x27;, se cambia a &#x27;https://stage-website.valefielcomercios.com&#x27;.
+ *
+ * @param {ProgramRequestModel} programRequest - El objeto que contiene la URL del programa.
+ *
+ * @returns {void}
+ */
+  loadProgram() {
+    let url &#x3D; window.location.origin;
+    if (url &#x3D;&#x3D; &#x27;http://localhost:4200&#x27;) {
+      url &#x3D; &#x27;https://stage-website.valefielcomercios.com&#x27;
+    }
+    let programRequest: ProgramRequestModel &#x3D; {
+      URL: url
+    }
+    this.lookAndFeelRepository.getProgram(programRequest).subscribe({
+      next: (data: ResponseBaseModel&lt;UrlToProgramModel&gt;) &#x3D;&gt; {
+        this.programId &#x3D; data.data.ProgramId;
+        this.getProgram(data.data.ProgramId);
+        saveSession(data.data.ProgramId, &#x27;programId&#x27;);
+        this.loadFavicon(data.data.Name, data.data.LookAndFeel.Icon)
+        localStorage.setItem(&#x27;PasswordLength&#x27;, data.data.PasswordMinLength.toString());
+        saveSession(data.data.CanRegisterOnWebResponsive, &#x27;RegisterOnWebResponsive&#x27;)
+        saveSession(data.data.LookAndFeel.UseBigBackground, &#x27;useBigImage&#x27;);
+        this.loadGtmScripts(data.data.TagManagerWebResponsive);
+        saveSession(data.data.LookAndFeel, &#x27;configVisual&#x27;);
+        saveSession(data.data.PasswordMinLength, &#x27;passwordMinlength&#x27;);
+        this.emitEventCopyright(data.data.Copyright);
+        applyTheme(data.data.LookAndFeel);
+        applyFonts(data.data.LookAndFeel);
+        const miEvento &#x3D; new CustomEvent(&#x27;programIsLoaded&#x27;);
+        document.dispatchEvent(miEvento);
+      }, error: (error: HttpErrorResponse) &#x3D;&gt; {
+        this.toastGenericRepository.genericErrorMessage();
+      }
+    })
+  }
+
+  /**
+   * Carga los scripts de Google Tag Manager en el documento.
+   *
+   * @param gtmCode - El código de Google Tag Manager.
+   */
+  loadGtmScripts(gtmCode: string) {
+    const scriptUrlGtm &#x3D; document.createElement(&#x27;script&#x27;);
+    scriptUrlGtm.setAttribute(&#x27;src&#x27;, &#x60;https://www.googletagmanager.com/gtag/js?id&#x3D;${gtmCode}&#x60;);
+    document.head.appendChild(scriptUrlGtm);
+    const scriptGtmSend &#x3D; document.createElement(&#x27;script&#x27;);
+    scriptGtmSend.innerHTML &#x3D; &#x60;
+        window.dataLayer &#x3D; window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag(&#x27;js&#x27;, new Date());
+        gtag(&#x27;config&#x27;, &#x27;${gtmCode}&#x27;);
+        &#x60;
+    document.head.appendChild(scriptGtmSend);
+
+    const scriptGtmRead &#x3D; document.createElement(&#x27;script&#x27;);
+    scriptGtmRead.innerHTML &#x3D; &#x60;
+    window.addEventListener(&#x27;message&#x27;, function (event) {
+      try {
+        var dataValidate &#x3D; event.data;
+        if (dataValidate !&#x3D; undefined) {
+          var data &#x3D; JSON.parse(event.data);
+          var dataLayer &#x3D; window.dataLayer || (window.dataLayer &#x3D; [0]);
+          var evenName &#x3D; data.event;
+          gtag(&#x27;event&#x27;, evenName, data);
+        }
+      } catch (error) { }
+
+    });
+    &#x60;
+    document.head.appendChild(scriptGtmRead);
+  }
+
+  /**
+   * Activa o desactiva la clase &quot;right-bar-enabled&quot; en el elemento body del documento.
+   *
+   * @returns {void}
+   */
+  onSettingsButtonClicked() {
+    document.body.classList.toggle(&quot;right-bar-enabled&quot;);
+  }
+
+  /**
+   * Obtiene un programa específico.
+   *
+   * @param programId - El ID del programa que se desea obtener.
+   */
+  getProgram(programId: number) {
+    this.programService
+      .getProgram(programId, environment.sourceId)
+      .subscribe({
+        next: (response: ProgramDto) &#x3D;&gt; {
+          saveSession(JSON.stringify(response), &#x27;program&#x27;);
+        },
+        error: (error: any) &#x3D;&gt; {
+          console.error(&quot;Error, &quot;, error);
+        },
+      });
+  }
+
+  /**
+   * Carga el favicon de la aplicación y actualiza el título de la página.
+   *
+   * @param progamName - El nombre del programa que se utilizará como título de la página.
+   * @param iconUrl - La URL del favicon que se utilizará en la página.
+   */
+  loadFavicon(progamName: string, iconUrl: string) {
+    document.title &#x3D; progamName;
+    let iconPage &#x3D; document.getElementById(&#x27;pageIcon&#x27;) as HTMLLinkElement;
+    iconPage.href &#x3D; iconUrl;
+  }
+
+  /**
+   * Cambia el estado del menú móvil.
+   *
+   * @remarks
+   * Esta función alterna el valor de la propiedad &#x60;isCondensed&#x60;, agrega o remueve las clases CSS &quot;sidebar-enable&quot; y &quot;vertical-collpsed&quot; al elemento &#x60;body&#x60; del documento, y remueve la clase &quot;vertical-collpsed&quot; si el ancho de la pantalla es menor o igual a 768 píxeles.
+   *
+   * @returns No devuelve ningún valor.
+   */
+  onToggleMobileMenu() {
+    this.isCondensed &#x3D; !this.isCondensed;
+    document.body.classList.toggle(&quot;sidebar-enable&quot;);
+    document.body.classList.toggle(&quot;vertical-collpsed&quot;);
+
+    if (window.screen.width &lt;&#x3D; 768) {
+      document.body.classList.remove(&quot;vertical-collpsed&quot;);
+    }
+  }
+
+  /**
+   * Emite un evento de derechos de autor.
+   *
+   * @param copyright El texto de los derechos de autor.
+   */
+  emitEventCopyright(copyright: string) {
+    localStorage.setItem(&#x27;Copyright&#x27;, copyright)
+    const miEvento &#x3D; new CustomEvent(&#x27;copyrightLoad&#x27;, { detail: copyright });
+    document.dispatchEvent(miEvento);
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-spinner&gt;&lt;/app-spinner&gt;
+&lt;router-outlet&gt;&lt;/router-outlet&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./app.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">router-outlet {
+  box-sizing: border-box;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-spinner></app-spinner><router-outlet></router-outlet></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BannerComponent', 'selector': 'app-banner'},{'name': 'FeatureArticlesComponent', 'selector': 'app-feature-articles'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MatCloseSessionDialogComponent', 'selector': 'app-mat-close-session-dialog'},{'name': 'MatConfirmAwardComponent', 'selector': 'app-mat-confirm-award'},{'name': 'MatConfirmDialogComponent', 'selector': 'app-mat-confirm-dialog'},{'name': 'MatFormNequiDaviplataComponent', 'selector': 'app-mat-form-nequi-daviplata'},{'name': 'MatFormProductComponent', 'selector': 'app-mat-form-product'},{'name': 'MenuProfileComponent', 'selector': 'app-menu-profile'},{'name': 'MixpayResponseComponent', 'selector': 'app-mixpay-response'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'PolicyAcceptanceDialogComponent', 'selector': 'app-policy-acceptance-dialog'},{'name': 'PopupInformationComponent', 'selector': 'app-popup-information'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'WidgetsComponent', 'selector': 'app-widgets'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AppComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

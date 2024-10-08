@@ -1,0 +1,1536 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>wr-shell documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">wr-shell documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  WidgetsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/shared/widgets/widgets.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-widgets</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./widgets.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./widgets.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#config" >config</a>
+                            </li>
+                            <li>
+                                <a href="#isSlideMoving" >isSlideMoving</a>
+                            </li>
+                            <li>
+                                <a href="#sections" >sections</a>
+                            </li>
+                            <li>
+                                <a href="#stringParams" >stringParams</a>
+                            </li>
+                            <li>
+                                <a href="#user" >user</a>
+                            </li>
+                            <li>
+                                <a href="#ventanaEmergente" >ventanaEmergente</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#afterChange" >afterChange</a>
+                            </li>
+                            <li>
+                                <a href="#beforeChange" >beforeChange</a>
+                            </li>
+                            <li>
+                                <a href="#delay" >delay</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#redirectWidgets" >redirectWidgets</a>
+                            </li>
+                            <li>
+                                <a href="#sendGtmData" >sendGtmData</a>
+                            </li>
+                            <li>
+                                <a href="#sendGtmDataBenefit" >sendGtmDataBenefit</a>
+                            </li>
+                            <li>
+                                <a href="#showWidget" >showWidget</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router, gtmEventRepository: <a href="../classes/GtmDispatchEventsRepository.html" target="_self">GtmDispatchEventsRepository</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/modules/shared/widgets/widgets.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>gtmEventRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/GtmDispatchEventsRepository.html" target="_self" >GtmDispatchEventsRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="afterChange"></a>
+                    <span class="name">
+                        <span ><b>afterChange</b></span>
+                        <a href="#afterChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>afterChange()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="151"
+                                    class="link-to-prism">src/app/modules/shared/widgets/widgets.component.ts:151</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método que se ejecuta después de cambiar de slide.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="beforeChange"></a>
+                    <span class="name">
+                        <span ><b>beforeChange</b></span>
+                        <a href="#beforeChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>beforeChange()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="144"
+                                    class="link-to-prism">src/app/modules/shared/widgets/widgets.component.ts:144</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método que se ejecuta antes de cambiar de slide.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delay"></a>
+                    <span class="name">
+                        <span ><b>delay</b></span>
+                        <a href="#delay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>delay(ms: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="60"
+                                    class="link-to-prism">src/app/modules/shared/widgets/widgets.component.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>ms</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="45"
+                                    class="link-to-prism">src/app/modules/shared/widgets/widgets.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="redirectWidgets"></a>
+                    <span class="name">
+                        <span ><b>redirectWidgets</b></span>
+                        <a href="#redirectWidgets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>redirectWidgets()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="136"
+                                    class="link-to-prism">src/app/modules/shared/widgets/widgets.component.ts:136</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método que redirige a la vista de widgets.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendGtmData"></a>
+                    <span class="name">
+                        <span ><b>sendGtmData</b></span>
+                        <a href="#sendGtmData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sendGtmData(widgets: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="117"
+                                    class="link-to-prism">src/app/modules/shared/widgets/widgets.component.ts:117</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Objeto que contiene la información del widget.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>widgets</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendGtmDataBenefit"></a>
+                    <span class="name">
+                        <span ><b>sendGtmDataBenefit</b></span>
+                        <a href="#sendGtmDataBenefit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sendGtmDataBenefit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="157"
+                                    class="link-to-prism">src/app/modules/shared/widgets/widgets.component.ts:157</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método que envía el evento de GTM al hacer clic en el botón &quot;Ver todos los beneficios&quot;.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showWidget"></a>
+                    <span class="name">
+                        <span ><b>showWidget</b></span>
+                        <a href="#showWidget"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showWidget(widget: <a href="../classes/BoardEntityModel.html" target="_self">BoardEntityModel</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="88"
+                                    class="link-to-prism">src/app/modules/shared/widgets/widgets.component.ts:88</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Muestra un widget en la aplicación.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>widget</td>
+                                            <td>
+                                                            <code><a href="../classes/BoardEntityModel.html" target="_self" >BoardEntityModel</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>null</code>
+                                            </td>
+
+                                            <td>
+                                                    <ul>
+<li>El widget a mostrar. Si no se proporciona, se asume como nulo.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>void</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="config"></a>
+                    <span class="name">
+                        <span ><b>config</b></span>
+                        <a href="#config"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    arrows: false,
+    infinite: true,
+    firstMobile: true,
+    slidesToScroll: 1,
+    slidesToShow: 1
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/modules/shared/widgets/widgets.component.ts:73</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Configuración para el componente de widgets.</p>
+</div>
+                </td>
+            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>arrows</td>
+                                                    <td>
+                                                            <code><ul>
+<li>Indica si se muestran las flechas de navegación.</li>
+</ul>
+</code>
+                                                    </td>
+                                            </tr>
+                                            <tr>
+                                                    <td>infinite</td>
+                                                    <td>
+                                                            <code><ul>
+<li>Indica si la navegación es infinita.</li>
+</ul>
+</code>
+                                                    </td>
+                                            </tr>
+                                            <tr>
+                                                    <td>firstMobile</td>
+                                                    <td>
+                                                            <code><ul>
+<li>Indica si se muestra el primer elemento en dispositivos móviles.</li>
+</ul>
+</code>
+                                                    </td>
+                                            </tr>
+                                            <tr>
+                                                    <td>slidesToScroll</td>
+                                                    <td>
+                                                            <code><ul>
+<li>El número de elementos a desplazar en cada cambio de diapositiva.</li>
+</ul>
+</code>
+                                                    </td>
+                                            </tr>
+                                            <tr>
+                                                    <td>slidesToShow</td>
+                                                    <td>
+                                                            <code><ul>
+<li>El número de elementos a mostrar en cada diapositiva.</li>
+</ul>
+</code>
+                                                    </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isSlideMoving"></a>
+                    <span class="name">
+                        <span ><b>isSlideMoving</b></span>
+                        <a href="#isSlideMoving"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/modules/shared/widgets/widgets.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sections"></a>
+                    <span class="name">
+                        <span ><b>sections</b></span>
+                        <a href="#sections"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/BoardEntityModel.html" target="_self" >BoardEntityModel[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/modules/shared/widgets/widgets.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stringParams"></a>
+                    <span class="name">
+                        <span ><b>stringParams</b></span>
+                        <a href="#stringParams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/modules/shared/widgets/widgets.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user"></a>
+                    <span class="name">
+                        <span ><b>user</b></span>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/LoginValeproResponseModel.html" target="_self" >LoginValeproResponseModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/modules/shared/widgets/widgets.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ventanaEmergente"></a>
+                    <span class="name">
+                        <span ><b>ventanaEmergente</b></span>
+                        <a href="#ventanaEmergente"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/modules/shared/widgets/widgets.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
+import { Router } from &quot;@angular/router&quot;;
+import { WidgetTypes } from &quot;src/app/core/enum/widgetType&quot;;
+import { GTMSelectContent } from &quot;src/app/core/models/gtm-models/gtmSelectContent.model&quot;;
+import { BoardEntityModel, ListBoardsResponseModel } from &quot;src/app/core/models/response/listBoardsResponse.model&quot;;
+import { GtmDispatchEventsRepository } from &quot;src/app/core/repositories/gtmDispatchEvent.repository&quot;;
+import { getSession, saveSession } from &quot;src/app/core/utils/encryptData&quot;;
+import { LoginValeproResponseModel } from &quot;src/app/infrastructure/dto/response/loginValeproResponse.model&quot;;
+
+@Component({
+  selector: &quot;app-widgets&quot;,
+  templateUrl: &quot;./widgets.component.html&quot;,
+  styleUrls: [&quot;./widgets.component.scss&quot;],
+})
+/**
+ * Componente que representa la visualización de widgets.
+ *
+ * @remarks
+ * Este componente muestra una lista de widgets y permite interactuar con ellos.
+ *
+ * @example
+ * &#x60;&#x60;&#x60;typescript
+ * const widgetsComponent &#x3D; new WidgetsComponent();
+ * widgetsComponent.showWidget();
+ * &#x60;&#x60;&#x60;
+ *
+ * @public
+ */
+export class WidgetsComponent implements OnInit {
+
+  stringParams: any;
+  ventanaEmergente: any;
+  isSlideMoving: boolean &#x3D; false;
+  sections: BoardEntityModel[] &#x3D; [];
+  user: LoginValeproResponseModel;
+
+
+  constructor(
+    private router: Router,
+    private gtmEventRepository: GtmDispatchEventsRepository
+  ) {
+    this.user &#x3D; getSession&lt;LoginValeproResponseModel&gt;(&#x27;accountValepro&#x27;);
+  }
+
+  async ngOnInit() {
+    while (this.sections.length &#x3D;&#x3D;&#x3D; 0) {
+      await this.delay(100);
+      const allSections &#x3D; getSession&lt;ListBoardsResponseModel&gt;(&#x27;sections&#x27;);
+      if (allSections &amp;&amp; allSections.boardEntities) {
+        allSections.boardEntities.forEach(entity &#x3D;&gt; {
+          if (entity.boardTypeId &#x3D;&#x3D;&#x3D; 1) {
+            this.sections.push(entity);
+          }
+        });
+      }
+    }
+    this.stringParams &#x3D; &#x60;?IDPrograma&#x3D;${this.user.ProgramId}&amp;IDPersona&#x3D;${this.user.PersonId}&amp;IDCuenta&#x3D;${this.user.AccountId}&#x60;;
+  }
+
+  delay(ms: number) {
+    return new Promise(resolve &#x3D;&gt; setTimeout(resolve, ms));
+  }
+
+  /**
+   * Configuración para el componente de widgets.
+   *
+   * @param {boolean} arrows - Indica si se muestran las flechas de navegación.
+   * @param {boolean} infinite - Indica si la navegación es infinita.
+   * @param {boolean} firstMobile - Indica si se muestra el primer elemento en dispositivos móviles.
+   * @param {number} slidesToScroll - El número de elementos a desplazar en cada cambio de diapositiva.
+   * @param {number} slidesToShow - El número de elementos a mostrar en cada diapositiva.
+   */
+  config &#x3D; {
+    arrows: false,
+    infinite: true,
+    firstMobile: true,
+    slidesToScroll: 1,
+    slidesToShow: 1
+  };
+
+
+  /**
+   * Muestra un widget en la aplicación.
+   *
+   * @param widget - El widget a mostrar. Si no se proporciona, se asume como nulo.
+   * @returns void
+   */
+  showWidget(widget: BoardEntityModel &#x3D; null) {
+    if (this.isSlideMoving) {
+      return;
+    }
+    saveSession(JSON.stringify(widget), &#x27;widgetSelected&#x27;)
+    this.sendGtmData(widget);
+    switch (widget.openingModeId) {
+      case WidgetTypes.EmbedType1:
+        this.router.navigateByUrl(
+          &#x60;main/widgets/detail/${widget.boardId}&#x60;
+        );
+        break;
+      case WidgetTypes.Popup:
+        if (!this.stringParams) {
+          this.stringParams &#x3D; &#x60;?IDPrograma&#x3D;${this.user.ProgramId}&amp;IDPersona&#x3D;${this.user.PersonId}&amp;IDCuenta&#x3D;${this.user.AccountId}&#x60;;
+        }
+        this.ventanaEmergente &#x3D; window.open(
+          widget.url + this.stringParams,
+          &quot;Detalle&quot;,
+          &quot;width&#x3D;1200,height&#x3D;800&quot;
+        );
+        break;
+    }
+  }
+
+  /**
+   * Objeto que contiene la información del widget.
+   * @param widgets
+   */
+  sendGtmData(widgets: any) {
+    let tagData: GTMSelectContent &#x3D; {
+      event: &quot;select_content&quot;,
+      ParameterTarget: &quot;Home&quot;,
+      ParameterType: &#x27;Imagen&#x27;,
+      ParameterCategory: &quot;Widgets&quot;,
+      UserName: this.user.UserName,
+      IDAccount: this.user.AccountId,
+      IDProgram: this.user.ProgramId,
+      IDPerson: this.user.PersonId,
+      ParameterText: widgets.Titulo,
+      ParameterItemID: widgets.IDMensaje
+    };
+    this.gtmEventRepository.sendEvent(tagData);
+  }
+
+  /**
+   * Método que redirige a la vista de widgets.
+   */
+  redirectWidgets() {
+    this.sendGtmDataBenefit()
+    this.router.navigate([&quot;main/widgets&quot;]);
+  }
+
+  /**
+   * Método que se ejecuta antes de cambiar de slide.
+   */
+  beforeChange() {
+    this.isSlideMoving &#x3D; true;
+  }
+
+  /**
+   * Método que se ejecuta después de cambiar de slide.
+   */
+  afterChange() {
+    this.isSlideMoving &#x3D; false;
+  }
+  /**
+   * Método que envía el evento de GTM al hacer clic en el botón &quot;Ver todos los beneficios&quot;.
+   */
+  sendGtmDataBenefit() {
+    let tagData: GTMSelectContent &#x3D; {
+      event: &quot;Select_content&quot;,
+      ParameterTarget: &quot;Home&quot;,
+      ParameterType: &#x27;button&#x27;,
+      ParameterCategory: &#x27;Home-Vale PRO&#x27;,
+      IDAccount: this.user.AccountId,
+      IDProgram: this.user.ProgramId,
+      IDPerson: this.user.PersonId,
+      UserName: this.user.UserName,
+      ParameterText: &#x27;Ver todos los beneficios&#x27;,
+      ParameterItemID: &#x27;&#x27;
+    }
+    this.gtmEventRepository.sendEvent(tagData);
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-widgets&quot; *ngIf&#x3D;&quot;sections.length &gt; 0&quot;&gt;
+  &lt;div class&#x3D;&quot;buttonBarHeader barTitle&quot;&gt;
+
+    &lt;span class&#x3D;&quot;bold-16 primario titulo&quot;&gt;Más Beneficios para ti&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;widgets-container&quot;&gt;
+    &lt;a (click)&#x3D;&quot;showWidget(image)&quot; class&#x3D;&quot;container-imagen&quot; *ngFor&#x3D;&quot;let image of  sections | slice:0:3&quot;
+      [ngClass]&#x3D;&quot;&#x27;tres&#x27;&quot;&gt;
+      &lt;img class&#x3D;&quot;imagen-widget&quot; [src]&#x3D;&quot;image.image&quot; alt&#x3D;&quot;img 1&quot;&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;swiper-widget&quot;&gt;
+    &lt;ngx-slick-carousel [config]&#x3D;&quot;config&quot; class&#x3D;&quot;swiper &quot; (afterChange)&#x3D;&quot;afterChange()&quot; (beforeChange)&#x3D;&quot;beforeChange()&quot;&gt;
+      &lt;div class&#x3D;&quot;swiper-slide&quot; ngxSlickItem *ngFor&#x3D;&quot;let image of sections | slice:0:3&quot;&gt;
+        &lt;div class&#x3D;&quot;swiper-wrapper&quot;&gt;
+          &lt;div (click)&#x3D;&quot;showWidget(image)&quot; [ngClass]&#x3D;&quot;&#x27;tres&#x27;&quot; class&#x3D;&quot;img--widget&quot;
+            [ngStyle]&#x3D;&quot;{&#x27;background-image&#x27;: &#x27;url(&#x27; + image.image + &#x27;)&#x27;}&quot;&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/ngx-slick-carousel&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;bar-btn&quot;&gt;
+    &lt;div class&#x3D;&quot;button btn-allShow&quot; (click)&#x3D;&quot;redirectWidgets()&quot;&gt;&lt;span class&#x3D;&quot;bold-16 primary&quot;&gt;Ver todos los
+        beneficios&lt;/span&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./widgets.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.widgets-container {
+  display: grid;
+  margin-top: 15px;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.swiper-slide {
+  overflow: hidden;
+  width: 85vw;
+}
+
+.container-imagen {
+  overflow: hidden;
+  position: relative;
+
+  &amp;.uno,
+  &amp;.dos,
+  &amp;.tres {
+    height: 210px;
+  }
+
+  &amp;.uno,
+  &amp;.tres {
+    width: 100%;
+  }
+
+  &amp;.dos {
+    width: 49%;
+  }
+
+  .imagen-widget {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    height: auto;
+  }
+
+  &amp;.tres .imagen-widget {
+    width: 96%;
+  }
+
+  &amp;.uno {
+    margin-right: 10px;
+  }
+
+  &amp;.tres {
+    max-width: 390px;
+
+    &amp;:first-child,
+    &amp;:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.container-widgets {
+  max-width: 100%;
+}
+
+.titulo {
+  margin-left: 1%;
+  color: var(--ngx-valepro-color-secondary);
+}
+
+.imagen-widget {
+  cursor: pointer;
+}
+
+.bar-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+
+  .btn-allShow {
+    width: 260px;
+    margin: 0.5rem 0 1rem 0;
+  }
+}
+
+.barTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 1rem;
+}
+
+
+.img--widget {
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  width: 100%;
+  background-position: center left;
+  box-sizing: border-box;
+}
+
+.widgets-container {
+  display: none;
+}
+
+
+
+@media (min-width: 576px) {
+  .blanco {
+    width: auto;
+    font-size: 12px;
+  }
+
+
+}
+
+@media (max-width: 577px) {
+  .imagen-widget {
+    cursor: pointer;
+    padding-right: 10px;
+  }
+
+  .bar-btn {
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 500px) {
+  .img--widget {
+    height: 182px;
+  }
+
+  .bar-btn {
+    margin-top: 0px;
+  }
+
+}
+
+@media (min-width: 300px) and (max-width: 399px) {
+  .img--widget {
+    height: 235px;
+    margin-top: 1rem;
+  }
+
+  .bar-btn {
+    margin-top: 0px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 499px) {
+  .img--widget {
+    height: 300px;
+    margin-top: 1rem;
+  }
+
+  .bar-btn {
+    margin-top: 0px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 599px) {
+  .img--widget {
+    height: 220px;
+    margin-top: 1rem;
+  }
+
+  .swiper-slide.slick-slide.slick-current.slick-active {
+    width: 53vw !important;
+    margin-right: 1rem;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+  .img--widget {
+    height: 220px;
+    margin-top: 1rem;
+  }
+
+  .swiper-slide.slick-slide.slick-current.slick-active {
+    width: 50vw !important;
+    margin-right: 1rem;
+  }
+
+
+}
+
+@media (min-width: 768px) {
+  .widgets-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: .2rem;
+    justify-items: stretch;
+    align-items: stretch;
+  }
+
+  .swiper {
+    display: flex;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container-widgets" *ngIf="sections.length > 0">  <div class="buttonBarHeader barTitle">    <span class="bold-16 primario titulo">Más Beneficios para ti</span>  </div>  <div class="widgets-container">    <a (click)="showWidget(image)" class="container-imagen" *ngFor="let image of  sections | slice:0:3"      [ngClass]="\'tres\'">      <img class="imagen-widget" [src]="image.image" alt="img 1">    </a>  </div>  <div class="swiper-widget">    <ngx-slick-carousel [config]="config" class="swiper " (afterChange)="afterChange()" (beforeChange)="beforeChange()">      <div class="swiper-slide" ngxSlickItem *ngFor="let image of sections | slice:0:3">        <div class="swiper-wrapper">          <div (click)="showWidget(image)" [ngClass]="\'tres\'" class="img--widget"            [ngStyle]="{\'background-image\': \'url(\' + image.image + \')\'}">          </div>        </div>      </div>    </ngx-slick-carousel>  </div>  <div class="bar-btn">    <div class="button btn-allShow" (click)="redirectWidgets()"><span class="bold-16 primary">Ver todos los        beneficios</span></div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BannerComponent', 'selector': 'app-banner'},{'name': 'FeatureArticlesComponent', 'selector': 'app-feature-articles'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MatCloseSessionDialogComponent', 'selector': 'app-mat-close-session-dialog'},{'name': 'MatConfirmAwardComponent', 'selector': 'app-mat-confirm-award'},{'name': 'MatConfirmDialogComponent', 'selector': 'app-mat-confirm-dialog'},{'name': 'MatFormNequiDaviplataComponent', 'selector': 'app-mat-form-nequi-daviplata'},{'name': 'MatFormProductComponent', 'selector': 'app-mat-form-product'},{'name': 'MenuProfileComponent', 'selector': 'app-menu-profile'},{'name': 'MixpayResponseComponent', 'selector': 'app-mixpay-response'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'PolicyAcceptanceDialogComponent', 'selector': 'app-policy-acceptance-dialog'},{'name': 'PopupInformationComponent', 'selector': 'app-popup-information'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'WidgetsComponent', 'selector': 'app-widgets'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'WidgetsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'WidgetsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

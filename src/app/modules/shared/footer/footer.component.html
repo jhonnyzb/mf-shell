@@ -1,0 +1,64 @@
+<div class="containerFullFooter">
+
+
+  <div class="containerFooter__contacto-line"></div>
+
+  <footer class="containerFooter" *ngIf="dataFooter">
+
+    <div class="containerFooter__contacto ">
+
+
+      <span class="regular-24 primario containerFooter__contacto-title">Para más información, comunícate a:</span>
+
+
+      <div class="regular-16 primario color-text">Línea de atención:
+        <a class="regular-16 primario containerFooter__contacto-a"
+          [href]="'tel:' + dataFooter.FooterPrograms.Phone">{{dataFooter.FooterPrograms.Phone}}</a>
+      </div>
+
+      <div class="regular-16 primario  color-text">Correo electrónico:
+        <a class="regular-16 primario containerFooter__contacto-a"
+          [href]="'mailto:' + dataFooter.FooterPrograms.Email">{{dataFooter.FooterPrograms.Email}}</a>
+      </div>
+
+    </div>
+
+    <div class="containerFooter__contacto-separador">
+      <div class="containerFooter__contacto-linea"></div>
+    </div>
+
+    <div class="containerFooter__contacto">
+
+      <div class="containerFooter__contacto-bottomLine">
+        <span routerLink="account/contact-us" (click)="sendGtmData('Contactanos')" class="bold-16 primario  color-text">
+          Contáctanos
+        </span>
+      </div>
+
+      <div class="containerFooter__contacto-bottomLine" *ngIf="dataFooter.FooterPrograms.Faq">
+        <span class="regular-16 primario  color-text" [routerLink]="['content']"
+          (click)="navigation('Preguntas frecuentes', dataFooter.FooterPrograms.Faq, 'Preguntas Frecuentes')">Preguntas frecuentes</span>
+      </div>
+
+      <div class="containerFooter__contacto-bottomLine" *ngIf="dataFooter.FooterPrograms.TermsAndConditions">
+        <span class="regular-16 primario  color-text" [routerLink]="['content']"
+          (click)="navigation('Términos y condiciones', dataFooter.FooterPrograms.TermsAndConditions, 'Terminos y condiciones')">Términos y
+          condiciones</span>
+      </div>
+
+      <div class="containerFooter__contacto-bottomLine" *ngIf="dataFooter.FooterPrograms.DataProcessingPolicy">
+        <span class="regular-16 primario  color-text" [routerLink]="['content']"
+          (click)="navigation('Política de tratamiento de datos', dataFooter.FooterPrograms.DataProcessingPolicy, 'Politica de Tratamiento de Datos')">Política
+          de tratamiento de datos</span>
+      </div>
+
+    </div>
+
+
+  </footer>
+
+  <div class="containerFooter__legal" *ngIf="dataFooter">
+    <span class="regular-12  color-text">{{dataFooter.FooterPrograms.Copyright}}</span>
+  </div>
+
+</div>

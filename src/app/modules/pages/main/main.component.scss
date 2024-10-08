@@ -1,0 +1,15 @@
+@media (min-width: 320px) {
+  .main {
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding-right: calc(var(--bs-gutter-x) * .5);
+  }
+}
+
+.widgets {
+  max-width: 100%;
+}

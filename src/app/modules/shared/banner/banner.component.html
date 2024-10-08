@@ -1,0 +1,10 @@
+<ngx-slick-carousel *ngIf="sections.length > 0" [config]="config" class="swiper container-banners"
+  (init)="slickInit($event)" (afterChange)="afterChange()" (beforeChange)="beforeChange()">
+  <div ngxSlickItem class="swiper-slide banners" *ngFor="let imgs of sections">
+    <div class="swiper-wrapper" (click)="navigation(imgs)">
+      <div [class.disabled]="isSlideMoving" class="img--banner"
+        [ngStyle]="{'background-image': 'url(' + imgs.image + ')'}">
+      </div>
+    </div>
+  </div>
+</ngx-slick-carousel>

@@ -1,0 +1,32 @@
+<div mat-dialog-content class="dialog-content">
+  <div class="dialog-content-tyc">
+    <h2 class="bold-16 primario dialog-content-title">Para continuar debes leer y aceptar los términos y política de
+      tratamiento de
+      datos.</h2>
+    <div class="check-box">
+      <input type="checkbox" [(ngModel)]="policyAcceptance.AcceptTermsAndConditions" title="tyc">
+      <span *ngIf="!isLoadInfo; else elseBlockTerm" class="regular-16 primario">Cargando Términos....</span>
+      <ng-template #elseBlockTerm>
+        <span class="regular-16 primario">He leído y acepto los 
+          <a [href]="urlterms" target="_blank"><u> Términos y condiciones</u></a>.
+        </span>
+      </ng-template>
+    </div>
+
+    <div class="check-box">
+      <input type="checkbox" [(ngModel)]="policyAcceptance.AcceptHabeasData" title="tyc">
+      <span *ngIf="!isLoadInfo; else elseBlockPolicy" class="regular-16 primario">Cargando Política....</span>
+      <ng-template #elseBlockPolicy>
+        <span class="regular-16 primario dialog-content-text">He leído y acepto la <a
+          [href]="urlPolicy" target="_blank"><u>
+            Política de
+            tratamiento de datos personales</u></a>.
+        </span>
+      </ng-template>
+    </div>
+  </div>
+  <div>
+    <button [disabled]="!policyAcceptance.AcceptTermsAndConditions || !policyAcceptance.AcceptHabeasData"
+      (click)="acceptPolicies()" class=" continue-button"> <span class="regular-16 primario">Continuar</span> </button>
+  </div>
+</div>

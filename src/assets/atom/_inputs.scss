@@ -1,0 +1,81 @@
+/* Estilos base del input */
+.input {
+  width: 100%;
+  padding: 8px 0px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+  margin: .7rem 0rem;
+  color: var(--ngx-valepro-color-secondary);
+}
+
+.select {
+  width: 100%;
+  margin: .7rem 0rem;
+}
+
+/* Estilo del input cuando está enfocado */
+.input:focus {
+  outline: none;
+  border-color: var(--ngx-valepro-color-secondary);
+  /* Azul para indicar foco */
+}
+
+/* Modificador para un input de error */
+.input--error {
+  border-color: var(--ngx-valepro-color-danger);
+  /* Rojo para indicar error */
+}
+
+
+
+
+
+
+/* Estilos para el mensaje de error del input */
+.input__error-message {
+  font-size: 0.8em;
+  color: #ff0000;
+  margin-top: 4px;
+}
+
+
+
+.containerInpus {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 304px;
+
+  &__input {
+    max-width: 304px;
+    width: 100%;
+  }
+
+}
+
+
+input::-ms-reveal {
+  display: none;
+}
+
+
+code-input input {
+  max-height: 50px;
+  box-sizing: border-box;
+  border-top-left-radius: 5px !important;
+  border-top-right-radius: 5px !important;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+code-input span {
+  border-bottom: 2px solid var(--ngx-valepro-color-secondary);
+  margin: 0rem .2rem;
+  display: flex !important;
+  padding: 0px !important;
+  align-items: center;
+}
+
+.code-input-error span {
+  border-bottom: 2px solid red;
+}

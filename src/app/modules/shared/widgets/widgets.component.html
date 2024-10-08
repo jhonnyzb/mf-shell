@@ -1,0 +1,19 @@
+<div class="container-widgets" *ngIf="sections.length > 0">
+  <div class="buttonBarHeader barTitle">
+    <span class="bold-16 primary titulo">Más Beneficios para ti</span>
+  </div>
+
+
+  <div class="container-widgets__swiper-widget">
+    <ngx-slick-carousel [config]="config" class="container-widgets__swiper" (afterChange)="afterChange()" (beforeChange)="beforeChange()">
+      <div class="container-widgets__contain-img" (click)="showWidget(image)" ngxSlickItem *ngFor="let image of sections | slice:0:3">
+          <img class="container-widgets__img" [src]="image.image" alt="¨beneficios">
+      </div>
+    </ngx-slick-carousel>
+  </div>
+
+  <div class="container-widgets__bar-btn">
+    <div class="button container-widgets__btn-allShow" (click)="redirectWidgets()"><span class="bold-16 primary">Ver todos los
+        beneficios</span></div>
+  </div>
+</div>

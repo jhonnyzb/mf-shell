@@ -1,0 +1,71 @@
+.containerDialogcustom {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+
+  &__contenIcon {
+    width: 50px;
+    height: 50px;
+    opacity: .3;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    border-radius: 50%;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  &__contenIcon:hover {
+    background-color: var(--ngx-valepro-color-tertiary);
+  }
+
+  &__icon {
+    position: absolute;
+    right: 1.8rem;
+    top: 1.8rem;
+    color: var(--ngx-valepro-color-tertiary);
+  }
+
+  &__image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 2rem 0rem 2rem;
+  }
+
+  &__image-icons {
+    max-width: 120px;
+    max-height: 120px;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__text {
+    text-align: center;
+    padding: 1rem;
+    color: var(--ngx-valepro-color-secondary);
+  }
+}
+
+
+////////////////////// Media Queries estructura BEM /////////////////////
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .containerDialogcustom {
+    padding: 3rem 4rem;
+    max-width: 550px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .containerDialogcustom {
+    padding: 3rem 4rem;
+    max-width: 550px;
+    width: 100%;
+  }
+}
